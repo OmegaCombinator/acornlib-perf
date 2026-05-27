@@ -1,0 +1,36 @@
+{"goal":"Nat.2 < Nat.3","proof":["function(x0: Nat) { x0 + Nat.1 = x0.suc }(Nat.2)","Nat.2 < Nat.2 + Nat.1","not Nat.2 < Nat.2 + Nat.1"]}
+{"goal":"Nat.3 < Nat.4","proof":["function(x0: Nat) { x0 + Nat.1 = x0.suc }(Nat.3)","Nat.3 < Nat.3 + Nat.1","not Nat.3 < Nat.3 + Nat.1"]}
+{"goal":"Nat.2 < Nat.4","proof":["not Nat.3 < Nat.4 or not Nat.2 < Nat.3","not Nat.2 < Nat.3"]}
+{"goal":"Nat.4 < Nat.5","proof":["function(x0: Nat) { x0 + Nat.1 = x0.suc }(Nat.4)","Nat.4 < Nat.4 + Nat.1","not Nat.4 < Nat.4 + Nat.1"]}
+{"goal":"Nat.2 < Nat.5","proof":["not Nat.4 < Nat.5 or not Nat.2 < Nat.4","not Nat.2 < Nat.4"]}
+{"goal":"Nat.5 < Nat.6","proof":["function(x0: Nat) { x0 + Nat.1 = x0.suc }(Nat.5)","Nat.5 < Nat.5 + Nat.1","not Nat.5 < Nat.5 + Nat.1"]}
+{"goal":"Nat.2 < Nat.6","proof":["not Nat.5 < Nat.6 or not Nat.2 < Nat.5","not Nat.2 < Nat.5"]}
+{"goal":"Nat.6 < Nat.7","proof":["function(x0: Nat) { x0 + Nat.1 = x0.suc }(Nat.6)","Nat.6 < Nat.6 + Nat.1","not Nat.6 < Nat.6 + Nat.1"]}
+{"goal":"two_lt_seven","proof":["not Nat.6 < Nat.7 or not Nat.2 < Nat.6","not Nat.2 < Nat.6"]}
+{"goal":"three_lt_four","proof":["function(x0: Nat) { x0 + Nat.1 = x0.suc }(Nat.3)","Nat.3 < Nat.3 + Nat.1","not Nat.3 < Nat.3 + Nat.1"]}
+{"goal":"Nat.1 * Nat.7 = Nat.7","proof":[]}
+{"goal":"Nat.7 + Nat.2 = Nat.9","proof":[]}
+{"goal":"Nat.1 * Nat.7 + Nat.2 = Nat.9","proof":[]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.1 * Nat.7 + Nat.2)(Nat.7) = lib(nat.nat_base).nat_mod(Nat.2)(Nat.7)","proof":[]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.2)(Nat.7) = Nat.2","proof":["not Nat.2 < Nat.7"]}
+{"goal":"nine_mod_seven","proof":["lib(nat.nat_base).nat_mod(Nat.2, Nat.7) = Nat.2","lib(nat.nat_base).nat_mod(Nat.1 * Nat.7 + Nat.2, Nat.7) != Nat.2","lib(nat.nat_base).nat_mod(Nat.1 * Nat.7 + Nat.2, Nat.7) = Nat.2"]}
+{"goal":"Nat.1 * Nat.4 = Nat.4","proof":[]}
+{"goal":"Nat.4 + Nat.3 = Nat.7","proof":[]}
+{"goal":"Nat.1 * Nat.4 + Nat.3 = Nat.7","proof":[]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.1 * Nat.4 + Nat.3)(Nat.4) = lib(nat.nat_base).nat_mod(Nat.3)(Nat.4)","proof":[]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.3)(Nat.4) = Nat.3","proof":["not Nat.3 < Nat.4"]}
+{"goal":"seven_mod_four","proof":["lib(nat.nat_base).nat_mod(Nat.3, Nat.4) = Nat.3","lib(nat.nat_base).nat_mod(Nat.1 * Nat.4 + Nat.3, Nat.4) != Nat.3","lib(nat.nat_base).nat_mod(Nat.1 * Nat.4 + Nat.3, Nat.4) = Nat.3"]}
+{"goal":"Nat.3 * Nat.3 = Nat.9","proof":[]}
+{"goal":"Nat.3 * (Nat.7 * j + Nat.3) = Nat.3 * j * Nat.7 + Nat.3 * Nat.3","proof":["function(x0: Nat, x1: Nat, x2: Nat) { x0 * x1 + x0 * x2 = x0 * (x1 + x2) }(Nat.3, Nat.7 * j, Nat.3)","function(x0: Nat, x1: Nat, x2: Nat) { x0 * x1 * x2 = x0 * (x1 * x2) }(Nat.3, j, Nat.7)","function(x0: Nat, x1: Nat) { x0 * x1 = x1 * x0 }(Nat.7, j)"]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.3 * j * Nat.7 + Nat.3 * Nat.3)(Nat.7) = lib(nat.nat_base).nat_mod(Nat.3 * Nat.3)(Nat.7)","proof":[]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.3 * (Nat.7 * j + Nat.3))(Nat.7) = Nat.2","proof":[]}
+{"goal":"mathd_numbertheory_301","proof":["not Nat.0 < j"]}
+{"goal":"exists(k0: Nat) { k0 * Nat.8 + lib(nat.nat_base).nat_mod(n)(Nat.8) = n }","proof":["exists(k0: Nat) { k0 * Nat.8 + lib(nat.nat_base).nat_mod(n, Nat.8) = n }"]}
+{"goal":"q * Nat.8 + Nat.7 = n","proof":["q * Nat.8 + lib(nat.nat_base).nat_mod(n, Nat.8) != n"]}
+{"goal":"Nat.2 * Nat.4 = Nat.8","proof":[]}
+{"goal":"q * Nat.8 = q * Nat.2 * Nat.4","proof":["function(x0: Nat, x1: Nat, x2: Nat) { x0 * x1 * x2 = x0 * (x1 * x2) }(q, Nat.2, Nat.4)"]}
+{"goal":"q * Nat.2 * Nat.4 + Nat.7 = n","proof":[]}
+{"goal":"lib(nat.nat_base).nat_mod(q * Nat.2 * Nat.4 + Nat.7)(Nat.4) = lib(nat.nat_base).nat_mod(Nat.7)(Nat.4)","proof":[]}
+{"goal":"lib(nat.nat_base).nat_mod(n)(Nat.4) = lib(nat.nat_base).nat_mod(Nat.7)(Nat.4)","proof":["lib(nat.nat_base).nat_mod(q * Nat.2 * Nat.4 + Nat.7, Nat.4) != lib(nat.nat_base).nat_mod(Nat.7, Nat.4)"]}
+{"goal":"lib(nat.nat_base).nat_mod(n)(Nat.4) = Nat.3","proof":["lib(nat.nat_base).nat_mod(Nat.7, Nat.4) != lib(nat.nat_base).nat_mod(n, Nat.4)"]}
+{"goal":"mathd_numbertheory_458","proof":["lib(nat.nat_base).nat_mod(n, Nat.8) != Nat.7"]}

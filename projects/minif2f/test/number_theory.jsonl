@@ -1,0 +1,3 @@
+{"goal":"Nat.9 * Nat.6 = Nat.54","proof":[]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.9 * Nat.6)(Nat.6) = Nat.0","proof":[]}
+{"goal":"mathd_numbertheory_342","proof":[]}

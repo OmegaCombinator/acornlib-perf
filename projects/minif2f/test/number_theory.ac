@@ -1,0 +1,13 @@
+from nat import Nat
+from nat.basic_multiplication import nat_mul_9_6
+from nat.nat_base import mod_mul
+
+/// MiniF2F test problem `mathd_numbertheory_342`.
+theorem mathd_numbertheory_342 {
+    Nat.54.mod(Nat.6) = Nat.0
+} by {
+    nat_mul_9_6
+    Nat.9 * Nat.6 = Nat.54
+    mod_mul(Nat.6, Nat.9)
+    (Nat.9 * Nat.6).mod(Nat.6) = Nat.0
+}

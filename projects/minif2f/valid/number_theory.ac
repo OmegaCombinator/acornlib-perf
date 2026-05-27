@@ -1,0 +1,102 @@
+from nat import Nat
+from nat.basic_multiplication import nat_add_4_3, nat_add_7_2, nat_mul_1_4,
+    nat_mul_1_7, nat_mul_2_4, nat_mul_3_3
+from nat.nat_base import add_mod, lt_suc, lt_trans, small_mod
+from nat.nat_congruence import mod_add_mul
+
+/// Two is less than seven.
+theorem two_lt_seven {
+    Nat.2 < Nat.7
+} by {
+    lt_suc(Nat.2)
+    Nat.2 < Nat.3
+    lt_suc(Nat.3)
+    Nat.3 < Nat.4
+    lt_trans(Nat.2, Nat.3, Nat.4)
+    Nat.2 < Nat.4
+    lt_suc(Nat.4)
+    Nat.4 < Nat.5
+    lt_trans(Nat.2, Nat.4, Nat.5)
+    Nat.2 < Nat.5
+    lt_suc(Nat.5)
+    Nat.5 < Nat.6
+    lt_trans(Nat.2, Nat.5, Nat.6)
+    Nat.2 < Nat.6
+    lt_suc(Nat.6)
+    Nat.6 < Nat.7
+    lt_trans(Nat.2, Nat.6, Nat.7)
+}
+
+/// Three is less than four.
+theorem three_lt_four {
+    Nat.3 < Nat.4
+} by {
+    lt_suc(Nat.3)
+}
+
+/// Nine has remainder two modulo seven.
+theorem nine_mod_seven {
+    Nat.9.mod(Nat.7) = Nat.2
+} by {
+    nat_mul_1_7
+    Nat.1 * Nat.7 = Nat.7
+    nat_add_7_2
+    Nat.7 + Nat.2 = Nat.9
+    Nat.1 * Nat.7 + Nat.2 = Nat.9
+    mod_add_mul(Nat.1, Nat.7, Nat.2)
+    (Nat.1 * Nat.7 + Nat.2).mod(Nat.7) = Nat.2.mod(Nat.7)
+    two_lt_seven
+    small_mod(Nat.2, Nat.7)
+    Nat.2.mod(Nat.7) = Nat.2
+}
+
+/// Seven has remainder three modulo four.
+theorem seven_mod_four {
+    Nat.7.mod(Nat.4) = Nat.3
+} by {
+    nat_mul_1_4
+    Nat.1 * Nat.4 = Nat.4
+    nat_add_4_3
+    Nat.4 + Nat.3 = Nat.7
+    Nat.1 * Nat.4 + Nat.3 = Nat.7
+    mod_add_mul(Nat.1, Nat.4, Nat.3)
+    (Nat.1 * Nat.4 + Nat.3).mod(Nat.4) = Nat.3.mod(Nat.4)
+    three_lt_four
+    small_mod(Nat.3, Nat.4)
+    Nat.3.mod(Nat.4) = Nat.3
+}
+
+/// MiniF2F valid problem `mathd_numbertheory_301`.
+theorem mathd_numbertheory_301(j: Nat) {
+    Nat.0 < j implies (Nat.3 * (Nat.7 * j + Nat.3)).mod(Nat.7) = Nat.2
+} by {
+    if Nat.0 < j {
+        nat_mul_3_3
+        Nat.3 * Nat.3 = Nat.9
+        Nat.3 * (Nat.7 * j + Nat.3) = (Nat.3 * j) * Nat.7 + Nat.3 * Nat.3
+        mod_add_mul(Nat.3 * j, Nat.7, Nat.3 * Nat.3)
+        ((Nat.3 * j) * Nat.7 + Nat.3 * Nat.3).mod(Nat.7) = (Nat.3 * Nat.3).mod(Nat.7)
+        nine_mod_seven
+        (Nat.3 * (Nat.7 * j + Nat.3)).mod(Nat.7) = Nat.2
+    }
+}
+
+/// MiniF2F valid problem `mathd_numbertheory_458`.
+theorem mathd_numbertheory_458(n: Nat) {
+    n.mod(Nat.8) = Nat.7 implies n.mod(Nat.4) = Nat.3
+} by {
+    if n.mod(Nat.8) = Nat.7 {
+        add_mod(n, Nat.8)
+        let q: Nat satisfy { q * Nat.8 + n.mod(Nat.8) = n }
+        q * Nat.8 + Nat.7 = n
+        nat_mul_2_4
+        Nat.2 * Nat.4 = Nat.8
+        q * Nat.8 = (q * Nat.2) * Nat.4
+        (q * Nat.2) * Nat.4 + Nat.7 = n
+        mod_add_mul(q * Nat.2, Nat.4, Nat.7)
+        ((q * Nat.2) * Nat.4 + Nat.7).mod(Nat.4) = Nat.7.mod(Nat.4)
+        n.mod(Nat.4) = Nat.7.mod(Nat.4)
+        seven_mod_four
+        n.mod(Nat.4) = Nat.3
+    }
+}

@@ -1,0 +1,37 @@
+from real.cauchy_schwarz import real_square_add_expanded
+from real.real_field import Real
+from real.sqrt_inequalities import double_mul_le_square_sum
+
+numerals Real
+
+/// MiniF2F valid problem `algebra_sqineq_2at2pclta2c2p41pc`.
+theorem algebra_sqineq_2at2pclta2c2p41pc(a: Real, c: Real) {
+    (1 + 1) * a * ((1 + 1) + c) <=
+        a * a + c * c + ((1 + 1) + (1 + 1)) * (1 + c)
+} by {
+    let two = 1 + 1
+    let four = two + two
+    let b = two + c
+    let lhs = two * a * (two + c)
+    let rhs = a * a + c * c + four * (1 + c)
+    double_mul_le_square_sum(a, b)
+    a * b + a * b <= a * a + b * b
+    two * a = a + a
+    lhs = (a + a) * b
+    (a + a) * b = a * b + a * b
+    lhs = a * b + a * b
+    real_square_add_expanded(two, c)
+    b * b = two * two + two * c + (two * c + c * c)
+    two * two = four
+    four * (1 + c) = four * 1 + four * c
+    four * 1 = four
+    four * c = two * c + two * c
+    four * (1 + c) = four + (two * c + two * c)
+    rhs = a * a + c * c + (four + (two * c + two * c))
+    four + two * c + (two * c + c * c) = c * c + (four + (two * c + two * c))
+    b * b = c * c + (four + (two * c + two * c))
+    a * a + b * b = a * a + (c * c + (four + (two * c + two * c)))
+    a * a + (c * c + (four + (two * c + two * c))) = rhs
+    a * a + b * b = rhs
+    lhs <= rhs
+}

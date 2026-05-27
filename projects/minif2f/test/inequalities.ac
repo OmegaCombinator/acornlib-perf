@@ -1,0 +1,31 @@
+from real.real_field import Real
+from real.real_ring import mul_neg_right
+from real.sqrt_inequalities import double_mul_le_square_sum
+
+numerals Real
+
+/// MiniF2F test problem `algebra_sqineq_at2malt1`.
+theorem algebra_sqineq_at2malt1(a: Real) {
+    a * ((1 + 1) - a) <= 1
+} by {
+    let lhs = a * ((1 + 1) - a)
+    double_mul_le_square_sum(a, 1)
+    a * 1 + a * 1 <= a * a + 1 * 1
+    a + a <= a * a + 1
+    a + a + -(a * a) <= a * a + 1 + -(a * a)
+    a * a + 1 = 1 + a * a
+    a * a + 1 + -(a * a) = 1 + a * a + -(a * a)
+    a * a + -(a * a) = Real.0
+    1 + a * a + -(a * a) = 1 + (a * a + -(a * a))
+    1 + (a * a + -(a * a)) = 1
+    a * a + 1 + -(a * a) = 1
+    (1 + 1) - a = (1 + 1) + -a
+    lhs = a * ((1 + 1) + -a)
+    a * ((1 + 1) + -a) = a * (1 + 1) + a * -a
+    a * (1 + 1) = a * 1 + a * 1
+    a * 1 = a
+    mul_neg_right(a, a)
+    a * -a = -(a * a)
+    lhs = a + a + -(a * a)
+    lhs <= 1
+}

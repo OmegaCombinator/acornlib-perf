@@ -1,0 +1,19 @@
+{"goal":"a * b + a * b <= a * a + b * b","proof":[]}
+{"goal":"two * a = a + a","proof":["function(x0: Real, x1: Real, x2: Real) { x0 * x1 + x2 * x1 = (x0 + x2) * x1 }(1, a, 1)","function(x0: Real) { 1 * x0 = x0 }(a)"]}
+{"goal":"lhs = (a + a) * b","proof":["two * a * b != lhs","two * a * b = lhs"]}
+{"goal":"(a + a) * b = a * b + a * b","proof":["function(x0: Real, x1: Real, x2: Real) { x0 * x1 + x2 * x1 = (x0 + x2) * x1 }(a, b, a)"]}
+{"goal":"lhs = a * b + a * b","proof":["a * b + a * b != (a + a) * b"]}
+{"goal":"b * b = two * two + two * c + (two * c + c * c)","proof":["two * two + two * c + (two * c + c * c) != (two + c) * b","two * two + two * c + (two * c + c * c) = (two + c) * b"]}
+{"goal":"two * two = four","proof":["function(x0: Real, x1: Real, x2: Real) { x0 * x1 + x0 * x2 = x0 * (x1 + x2) }(two, 1, 1)","function(x0: Real, x1: Real, x2: Real) { x0 * x1 * x2 = x0 * (x1 * x2) }(two, two, 1)","function(x0: Real, x1: Real) { x0 * x1 = x1 * x0 }(two, 1)","function(x0: Real, x1: Real) { x0 * x1 = x1 * x0 }(two * two, 1)","function[T0: lib(monoid).Monoid](x0: T0) { x0 * T0.1 = x0 }[Real](two)","function(x0: Real) { 1 * x0 = x0 }(two)","function(x0: Real) { 1 * x0 = x0 }(two * two)","two * (two * 1) != four"]}
+{"goal":"four * (1 + c) = four * 1 + four * c","proof":["function(x0: Real, x1: Real, x2: Real) { x0 * x1 + x0 * x2 = x0 * (x1 + x2) }(four, 1, c)"]}
+{"goal":"four * 1 = four","proof":["function(x0: Real, x1: Real) { x0 * x1 = x1 * x0 }(1, four)","function[T0: lib(monoid).Monoid](x0: T0) { T0.1 * x0 = x0 }[Real](four)"]}
+{"goal":"four * c = two * c + two * c","proof":["function(x0: Real, x1: Real, x2: Real) { x0 * x1 + x2 * x1 = (x0 + x2) * x1 }(two, c, two)"]}
+{"goal":"four * (1 + c) = four + (two * c + two * c)","proof":["four * 1 + (two * c + two * c) != four * (1 + c)","four * 1 + (two * c + two * c) = four * (1 + c)"]}
+{"goal":"rhs = a * a + c * c + (four + (two * c + two * c))","proof":["a * a + c * c + four * (1 + c) != rhs"]}
+{"goal":"four + two * c + (two * c + c * c) = c * c + (four + (two * c + two * c))","proof":["function(x0: Real, x1: Real, x2: Real) { x0 + x1 + x2 = x0 + (x1 + x2) }(four + two * c, two * c, c * c)","function(x0: Real, x1: Real, x2: Real) { x0 + x1 + x2 = x0 + (x1 + x2) }(four, two * c, two * c)","function(x0: Real, x1: Real) { x0 + x1 = x1 + x0 }(c * c, four + (two * c + two * c))"]}
+{"goal":"b * b = c * c + (four + (two * c + two * c))","proof":["four + two * c + (two * c + c * c) = b * b","four + two * c + (two * c + c * c) != b * b"]}
+{"goal":"a * a + b * b = a * a + (c * c + (four + (two * c + two * c)))","proof":["c * c + (four + (two * c + two * c)) != b * b"]}
+{"goal":"a * a + (c * c + (four + (two * c + two * c))) = rhs","proof":["function(x0: Real, x1: Real, x2: Real) { x0 + x1 + x2 = x0 + (x1 + x2) }(a * a, c * c, four + (two * c + two * c))"]}
+{"goal":"a * a + b * b = rhs","proof":["a * a + (c * c + (four + (two * c + two * c))) != rhs"]}
+{"goal":"lhs <= rhs","proof":["not a * b + a * b <= rhs","a * b + a * b <= rhs"]}
+{"goal":"algebra_sqineq_2at2pclta2c2p41pc","proof":[]}
