@@ -1,0 +1,78 @@
+{"goal":"a * b + a * b <= a * a + b * b","proof":[]}
+{"goal":"two * a = (1 + 1) * a","proof":["1 + 1 != two"]}
+{"goal":"(1 + 1) * a = 1 * a + 1 * a","proof":["function(x0: Real, x1: Real, x2: Real) { x0 * x1 + x2 * x1 = (x0 + x2) * x1 }(1, a, 1)"]}
+{"goal":"1 * a = a","proof":["function[T0: lib(monoid).Monoid](x0: T0) { T0.1 * x0 = x0 }[Real](a)"]}
+{"goal":"two * a = a + a","proof":[]}
+{"goal":"lhs = (a + a) * b","proof":["two * a * b != lhs","two * a * b = lhs"]}
+{"goal":"(a + a) * b = a * b + a * b","proof":["function(x0: Real, x1: Real, x2: Real) { x0 * x1 + x2 * x1 = (x0 + x2) * x1 }(a, b, a)"]}
+{"goal":"lhs = a * b + a * b","proof":["a * b + a * b != (a + a) * b"]}
+{"goal":"b * b = two * two + two * c + (two * c + c * c)","proof":["two * two + two * c + (two * c + c * c) != (two + c) * b","two * two + two * c + (two * c + c * c) = (two + c) * b"]}
+{"goal":"two * two = four","proof":["function(x0: Real, x1: Real, x2: Real) { x0 * x1 + x0 * x2 = x0 * (x1 + x2) }(two, 1, 1)","function(x0: Real, x1: Real, x2: Real) { x0 * x1 * x2 = x0 * (x1 * x2) }(two, two, 1)","function(x0: Real, x1: Real) { x0 * x1 = x1 * x0 }(two, 1)","function(x0: Real, x1: Real) { x0 * x1 = x1 * x0 }(two * two, 1)","function[T0: lib(monoid).Monoid](x0: T0) { x0 * T0.1 = x0 }[Real](two)","function(x0: Real) { 1 * x0 = x0 }(two)","function(x0: Real) { 1 * x0 = x0 }(two * two)","two * (two * 1) != four"]}
+{"goal":"four * (1 + c) = four * 1 + four * c","proof":["function(x0: Real, x1: Real, x2: Real) { x0 * x1 + x0 * x2 = x0 * (x1 + x2) }(four, 1, c)"]}
+{"goal":"four * 1 = 1 * four","proof":["function(x0: Real, x1: Real) { x0 * x1 = x1 * x0 }(four, 1)"]}
+{"goal":"1 * four = four","proof":["function[T0: lib(monoid).Monoid](x0: T0) { T0.1 * x0 = x0 }[Real](four)"]}
+{"goal":"four * 1 = four","proof":["four * 1 != 1 * four"]}
+{"goal":"four * c = two * c + two * c","proof":["function(x0: Real, x1: Real, x2: Real) { x0 * x1 + x2 * x1 = (x0 + x2) * x1 }(two, c, two)"]}
+{"goal":"four * (1 + c) = four + (two * c + two * c)","proof":["four * 1 + (two * c + two * c) != four * (1 + c)","four * 1 + (two * c + two * c) = four * (1 + c)"]}
+{"goal":"rhs = a * a + c * c + (four + (two * c + two * c))","proof":["a * a + c * c + four * (1 + c) != rhs"]}
+{"goal":"four + two * c + (two * c + c * c) = c * c + (four + (two * c + two * c))","proof":["function(x0: Real, x1: Real, x2: Real) { x0 + x1 + x2 = x0 + (x1 + x2) }(four + two * c, two * c, c * c)","function(x0: Real, x1: Real, x2: Real) { x0 + x1 + x2 = x0 + (x1 + x2) }(four, two * c, two * c)","function(x0: Real, x1: Real) { x0 + x1 = x1 + x0 }(c * c, four + (two * c + two * c))"]}
+{"goal":"b * b = c * c + (four + (two * c + two * c))","proof":["four + two * c + (two * c + c * c) = b * b","four + two * c + (two * c + c * c) != b * b"]}
+{"goal":"a * a + b * b = a * a + (c * c + (four + (two * c + two * c)))","proof":["c * c + (four + (two * c + two * c)) != b * b"]}
+{"goal":"a * a + (c * c + (four + (two * c + two * c))) = rhs","proof":["function(x0: Real, x1: Real, x2: Real) { x0 + x1 + x2 = x0 + (x1 + x2) }(a * a, c * c, four + (two * c + two * c))"]}
+{"goal":"a * a + b * b = rhs","proof":["a * a + (c * c + (four + (two * c + two * c))) != rhs"]}
+{"goal":"lhs <= rhs","proof":["not a * b + a * b <= rhs","a * b + a * b <= rhs"]}
+{"goal":"algebra_sqineq_2at2pclta2c2p41pc","proof":[]}
+{"goal":"x * y + x * y <= x * x + y * y","proof":[]}
+{"goal":"x + x = two * b + two * b","proof":[]}
+{"goal":"four * b = (two + two) * b","proof":["two + two != four"]}
+{"goal":"(two + two) * b = two * b + two * b","proof":["function(x0: Real, x1: Real, x2: Real) { x0 * x1 + x2 * x1 = (x0 + x2) * x1 }(two, b, two)"]}
+{"goal":"four * b = x + x","proof":["two * b + two * b != four * b","two * b + two * b = four * b"]}
+{"goal":"lhs = (x + x) * y","proof":["four * b * y != lhs"]}
+{"goal":"(x + x) * y = x * y + x * y","proof":["function(x0: Real, x1: Real, x2: Real) { x0 * x1 + x2 * x1 = (x0 + x2) * x1 }(x, y, x)"]}
+{"goal":"lhs = x * y + x * y","proof":["x * y + x * y != (x + x) * y"]}
+{"goal":"x * x = two * b * (two * b)","proof":[]}
+{"goal":"two * b * (two * b) = two * two * (b * b)","proof":["function(x0: Real, x1: Real) { x0 * x0 * (x1 * x1) = x0 * x1 * (x0 * x1) }(two, b)"]}
+{"goal":"two * two = four","proof":["function(x0: Real, x1: Real, x2: Real) { x0 * x1 + x0 * x2 = x0 * (x1 + x2) }(two, 1, 1)","function(x0: Real, x1: Real, x2: Real) { x0 * x1 * x2 = x0 * (x1 * x2) }(two, two, 1)","function(x0: Real, x1: Real) { x0 * x1 = x1 * x0 }(two, 1)","function(x0: Real, x1: Real) { x0 * x1 = x1 * x0 }(two * two, 1)","function[T0: lib(monoid).Monoid](x0: T0) { x0 * T0.1 = x0 }[Real](two)","function(x0: Real) { 1 * x0 = x0 }(two)","function(x0: Real) { 1 * x0 = x0 }(two * two)","two * (two * 1) != four"]}
+{"goal":"x * x = four * (b * b)","proof":["two * two * (b * b) != x * x","two * two * (b * b) = x * x"]}
+{"goal":"x * x + y * y = rhs","proof":["four * (b * b) + y * y != rhs"]}
+{"goal":"lhs <= rhs","proof":["not x * y + x * y <= rhs","x * y + x * y <= rhs"]}
+{"goal":"algebra_sqineq_4bap1lt4bsqpap1sq","proof":[]}
+{"goal":"a * b + a * b <= a * a + b * b","proof":[]}
+{"goal":"a * b + a * b <= 1 + 1","proof":["not a * b + a * b <= a * a + b * b"]}
+{"goal":"a * b <= Real.one_half * (1 + 1)","proof":["not a * b + a * b <= 1 + 1"]}
+{"goal":"Real.one_half * (1 + 1) = 1","proof":[]}
+{"goal":"a * b <= 1","proof":["not a * b <= Real.one_half * (1 + 1)"]}
+{"goal":"algebra_sqineq_2unitcircatblt1","proof":["a * a + b * b != 1 + 1"]}
+{"goal":"x * y + x * y <= x * x + y * y","proof":[]}
+{"goal":"real_six = real_three + real_three","proof":[]}
+{"goal":"real_six * real_six = (real_three + real_three) * real_six","proof":["real_three + real_three != real_six"]}
+{"goal":"(real_three + real_three) * real_six = real_three * real_six + real_three * real_six","proof":["function(x0: Real, x1: Real, x2: Real) { x0 * x1 + x2 * x1 = (x0 + x2) * x1 }(real_three, real_six, real_three)"]}
+{"goal":"real_six * real_six = real_three * real_six + real_three * real_six","proof":["real_three * real_six + real_three * real_six != (real_three + real_three) * real_six"]}
+{"goal":"lhs0 = (real_three * real_six + real_three * real_six) * (a * z)","proof":[]}
+{"goal":"(real_three * real_six + real_three * real_six) * (a * z) = real_three * real_six * (a * z) + real_three * real_six * (a * z)","proof":["function(x0: Real, x1: Real, x2: Real) { x0 * x1 + x2 * x1 = (x0 + x2) * x1 }(real_three * real_six, a * z, real_three * real_six)"]}
+{"goal":"x * y = real_three * a * (real_six * z)","proof":[]}
+{"goal":"real_three * a * (real_six * z) = real_three * (a * (real_six * z))","proof":[]}
+{"goal":"a * (real_six * z) = a * real_six * z","proof":[]}
+{"goal":"a * real_six = real_six * a","proof":[]}
+{"goal":"a * real_six * z = real_six * a * z","proof":["a * real_six != real_six * a"]}
+{"goal":"real_six * a * z = real_six * (a * z)","proof":[]}
+{"goal":"real_three * (a * (real_six * z)) = real_three * (real_six * (a * z))","proof":[]}
+{"goal":"real_three * (real_six * (a * z)) = real_three * real_six * (a * z)","proof":[]}
+{"goal":"real_three * a * (real_six * z) = real_three * real_six * (a * z)","proof":["real_three * (a * (real_six * z)) = real_three * real_six * (a * z)","real_three * (a * (real_six * z)) != real_three * real_six * (a * z)"]}
+{"goal":"lhs0 = x * y + x * y","proof":[]}
+{"goal":"x * x = real_three * a * (real_three * a)","proof":[]}
+{"goal":"real_three * a * (real_three * a) = real_three * real_three * (a * a)","proof":["function(x0: Real, x1: Real) { x0 * x0 * (x1 * x1) = x0 * x1 * (x0 * x1) }(real_three, a)"]}
+{"goal":"x * x = middle","proof":["real_three * a * (real_three * a) != middle","real_three * a * (real_three * a) = middle"]}
+{"goal":"y * y = real_six * z * (real_six * z)","proof":[]}
+{"goal":"real_six * z * (real_six * z) = real_six * real_six * (z * z)","proof":["function(x0: Real, x1: Real) { x0 * x0 * (x1 * x1) = x0 * x1 * (x0 * x1) }(real_six, z)"]}
+{"goal":"y * y = rhs","proof":["real_six * z * (real_six * z) != rhs","real_six * z * (real_six * z) = rhs"]}
+{"goal":"lhs0 <= middle + rhs","proof":[]}
+{"goal":"lhs0 + -middle <= middle + rhs + -middle","proof":["function(x0: Real, x1: Real, x2: Real) { not x0 <= x1 or x0 + x2 <= x1 + x2 }(lhs0, middle + rhs, -middle)"]}
+{"goal":"middle + rhs = rhs + middle","proof":["function(x0: Real, x1: Real) { x0 + x1 = x1 + x0 }(rhs, middle)"]}
+{"goal":"middle + rhs + -middle = rhs + middle + -middle","proof":["rhs + middle != middle + rhs"]}
+{"goal":"middle + -middle = 0","proof":["function(x0: Real) { x0 + -x0 = 0 }(middle)"]}
+{"goal":"rhs + middle + -middle = rhs + (middle + -middle)","proof":["function(x0: Real, x1: Real, x2: Real) { x0 + x1 + x2 = x0 + (x1 + x2) }(rhs, middle, -middle)"]}
+{"goal":"rhs + (middle + -middle) = rhs","proof":["function(x0: Real, x1: Real) { x0 + x1 = x1 + x0 }(rhs, middle + -middle)","function(x0: Real) { 0 + x0 = x0 }(real_six * real_six * (z * z))"]}
+{"goal":"middle + rhs + -middle = rhs","proof":["rhs + middle + -middle != rhs","rhs + middle + -middle = rhs"]}
+{"goal":"lhs0 + -middle <= rhs","proof":["not lhs0 + -middle <= middle + rhs + -middle"]}
+{"goal":"algebra_sqineq_36azm9asqle36zsq","proof":["function[T0: lib(add_group).AddGroup](x0: T0, x1: T0) { x0 + -x1 = x0 - x1 }[Real](real_six * real_six * (a * z), real_three * real_three * (a * a))","function[T0](x0: (T0, T0) -> Bool, x1: T0, x2: T0) { lib(set).equivalence_class_fun[T0](x0, x1, x2) = x0(x1, x2) }[Real](Real.lte, lhs0 + -middle, middle + rhs + -middle)","function[T0](x0: (T0, T0) -> Bool, x1: T0, x2: T0) { lib(set).equivalence_class_fun[T0](x0, x1, x2) = x0(x1, x2) }[Real](Real.lte, real_six * real_six * (a * z) - real_three * real_three * (a * a), real_six * real_six * (z * z))","Real.neg = lib(real.real_base).neg","Real.add = lib(real.real_base).add"]}

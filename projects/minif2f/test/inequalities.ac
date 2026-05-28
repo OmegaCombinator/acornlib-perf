@@ -1,0 +1,71 @@
+from real.cauchy_schwarz import real_square_add_expanded
+from real.real_field import Real
+from real.real_ring import mul_neg_left, mul_neg_right
+from real.sqrt_inequalities import double_le_imp_le_half, double_mul_le_square_sum,
+    one_half_mul_double
+
+numerals Real
+
+/// MiniF2F test problem `algebra_sqineq_at2malt1`.
+theorem algebra_sqineq_at2malt1(a: Real) {
+    a * ((1 + 1) - a) <= 1
+} by {
+    let lhs = a * ((1 + 1) - a)
+    double_mul_le_square_sum(a, 1)
+    a * 1 + a * 1 <= a * a + 1 * 1
+    a + a <= a * a + 1
+    a + a + -(a * a) <= a * a + 1 + -(a * a)
+    a * a + 1 = 1 + a * a
+    a * a + 1 + -(a * a) = 1 + a * a + -(a * a)
+    a * a + -(a * a) = Real.0
+    1 + a * a + -(a * a) = 1 + (a * a + -(a * a))
+    1 + (a * a + -(a * a)) = 1
+    a * a + 1 + -(a * a) = 1
+    (1 + 1) - a = (1 + 1) + -a
+    lhs = a * ((1 + 1) + -a)
+    a * ((1 + 1) + -a) = a * (1 + 1) + a * -a
+    a * (1 + 1) = a * 1 + a * 1
+    a * 1 = a
+    mul_neg_right(a, a)
+    a * -a = -(a * a)
+    lhs = a + a + -(a * a)
+    lhs <= 1
+}
+
+/// MiniF2F test problem `algebra_sqineq_unitcircatbpamblt1`.
+theorem algebra_sqineq_unitcircatbpamblt1(a: Real, b: Real) {
+    a * a + b * b = 1 implies a * b + (a - b) <= 1
+} by {
+    if a * a + b * b = 1 {
+        let u = a - b
+        let p = a * b
+        double_mul_le_square_sum(u, 1)
+        u * 1 + u * 1 <= u * u + 1 * 1
+        u + u <= u * u + 1
+        u = a + -b
+        real_square_add_expanded(a, -b)
+        u * u = a * a + a * -b + (a * -b + -b * -b)
+        mul_neg_right(a, b)
+        a * -b = -p
+        mul_neg_left(b, -b)
+        -b * -b = -(b * -b)
+        mul_neg_right(b, b)
+        b * -b = -(b * b)
+        -b * -b = b * b
+        u * u = a * a + -p + (-p + b * b)
+        u * u + (p + p) = a * a + b * b
+        u * u + (p + p) = 1
+        u * u + 1 + (p + p) = 1 + 1
+        p + p + (u * u + 1) = u * u + 1 + (p + p)
+        p + p + (u * u + 1) = 1 + 1
+        p + p + (u + u) <= p + p + (u * u + 1)
+        p + p + (u + u) <= 1 + 1
+        p + p + (u + u) = (p + u) + (p + u)
+        p + u + (p + u) <= 1 + 1
+        double_le_imp_le_half(p + u, 1 + 1)
+        p + u <= Real.one_half * (1 + 1)
+        one_half_mul_double(1)
+        Real.one_half * (1 + 1) = 1
+        a * b + (a - b) <= 1
+    }
+}
