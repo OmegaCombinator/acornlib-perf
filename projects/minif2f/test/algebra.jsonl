@@ -1,0 +1,62 @@
+{"goal":"(x + Real.1) * (x + Real.1) = x * (x + Real.1) + Real.1 * (x + Real.1)","proof":[]}
+{"goal":"x * (x + Real.1) = x * x + x * Real.1","proof":[]}
+{"goal":"x * Real.1 = x","proof":[]}
+{"goal":"x * (x + Real.1) = x * x + x","proof":["x * x + x * Real.1 != x * (x + Real.1)"]}
+{"goal":"Real.1 * (x + Real.1) = Real.1 * x + Real.1 * Real.1","proof":[]}
+{"goal":"Real.1 * x = x","proof":[]}
+{"goal":"Real.1 * Real.1 = Real.1","proof":[]}
+{"goal":"Real.1 * (x + Real.1) = x + Real.1","proof":["Real.1 * (x + Real.1) != Real.1 * x + Real.1","Real.1 * (x + Real.1) = Real.1 * x + Real.1"]}
+{"goal":"(x + Real.1) * (x + Real.1) = x * x + x + (x + Real.1)","proof":["x * (x + Real.1) + (x + Real.1) != (x + Real.1) * (x + Real.1)","x * (x + Real.1) + (x + Real.1) = (x + Real.1) * (x + Real.1)"]}
+{"goal":"(x * x + x + (x + Real.1)) * x = (x * x + x) * x + (x + Real.1) * x","proof":[]}
+{"goal":"(x * x + x) * x = x * x * x + x * x","proof":["function(x0: Real, x1: Real, x2: Real) { x0 * x1 + x2 * x1 = (x0 + x2) * x1 }(x * x, x, x)"]}
+{"goal":"(x + Real.1) * x = x * x + Real.1 * x","proof":[]}
+{"goal":"(x + Real.1) * x = x * x + x","proof":["x * x + Real.1 * x != (x + Real.1) * x"]}
+{"goal":"(x * x + x + (x + Real.1)) * x = x * x * x + x * x + (x * x + x)","proof":["(x * x + x) * x + (x * x + x) != (x * x + x + (x + Real.1)) * x","(x * x + x) * x + (x * x + x) = (x * x + x + (x + Real.1)) * x"]}
+{"goal":"x * x * x + x * x + (x * x + x) = x * x * x + x * x + x * x + x","proof":["function(x0: Real, x1: Real, x2: Real) { x0 + x1 + x2 = x0 + (x1 + x2) }(x * x * x + x * x, x * x, x)"]}
+{"goal":"from_nat[Real](Nat.2) = Real.1 + Real.1","proof":[]}
+{"goal":"(Real.1 + Real.1) * (x * x) = Real.1 * (x * x) + Real.1 * (x * x)","proof":["function(x0: Real, x1: Real, x2: Real) { x0 * x1 + x2 * x1 = (x0 + x2) * x1 }(Real.1, x * x, Real.1)"]}
+{"goal":"Real.1 * (x * x) = x * x","proof":["function(x0: Real, x1: Real, x2: Real) { x0 * x1 * x2 = x0 * (x1 * x2) }(Real.1, x, x)"]}
+{"goal":"from_nat[Real](Nat.2) * (x * x) = x * x + x * x","proof":[]}
+{"goal":"mathd_algebra_176","proof":["function[T0, T1, T2](x0: (T0, T1) -> T2, x1: T0, x2: T1) { lib(pair).curry[T0, T1, T2](lib(pair).uncurry[T0, T1, T2](x0), x1, x2) = x0(x1, x2) }[Real, Real, Real](Real.add, x * x * x + x * x + x * x, x)","function[T0, T1, T2](x0: (T0, T1) -> T2, x1: T0, x2: T1) { lib(pair).curry[T0, T1, T2](lib(pair).uncurry[T0, T1, T2](x0), x1, x2) = x0(x1, x2) }[Real, Real, Real](Real.add, x * x * x + from_nat[Real](Nat.2) * (x * x), x)","function(x0: Real, x1: Real, x2: Real) { x0 + x1 + x2 = x0 + (x1 + x2) }(x * x * x, x * x, x * x)"]}
+{"goal":"f(from_nat[Real](Nat.5)) = from_nat[Real](Nat.2) * from_nat[Real](Nat.5) - from_nat[Real](Nat.3)","proof":["function(x0: Real) { f(x0) = from_nat[Real](Nat.2) * x0 - from_nat[Real](Nat.3) and g(x0) = x0 + Real.1 }(from_nat[Real](Nat.5))","function(x0: Real) { from_nat[Real](Nat.2) * x0 - from_nat[Real](Nat.3) = f(x0) }(from_nat[Real](Nat.5))"]}
+{"goal":"from_nat[Real](Nat.2) * from_nat[Real](Nat.5) = from_nat[Real](Nat.10)","proof":["from_nat[Real](Nat.2) * from_nat[Real](Nat.5) != from_nat[Real](Nat.2 * Nat.5)"]}
+{"goal":"from_nat[Real](Nat.10) = from_nat[Real](Nat.7) + from_nat[Real](Nat.3)","proof":["from_nat[Real](Nat.7) + from_nat[Real](Nat.3) != from_nat[Real](Nat.7 + Nat.3)"]}
+{"goal":"from_nat[Real](Nat.10) - from_nat[Real](Nat.3) = from_nat[Real](Nat.7)","proof":["function(x0: Real, x1: Real, x2: Real) { x0 + x1 != x2 or x2 - x1 = x0 }(from_nat[Real](Nat.7), from_nat[Real](Nat.3), from_nat[Real](Nat.10))"]}
+{"goal":"from_nat[Real](Nat.2) * from_nat[Real](Nat.5) - from_nat[Real](Nat.3) = from_nat[Real](Nat.7)","proof":["from_nat[Real](Nat.10) - from_nat[Real](Nat.3) != from_nat[Real](Nat.7)"]}
+{"goal":"f(from_nat[Real](Nat.5)) = from_nat[Real](Nat.7)","proof":["from_nat[Real](Nat.2) * from_nat[Real](Nat.5) - from_nat[Real](Nat.3) != f(from_nat[Real](Nat.5))"]}
+{"goal":"g(f(from_nat[Real](Nat.5)) - Real.1) = f(from_nat[Real](Nat.5)) - Real.1 + Real.1","proof":["function(x0: Real) { f(x0) = from_nat[Real](Nat.2) * x0 - from_nat[Real](Nat.3) and g(x0) = x0 + Real.1 }(f(from_nat[Real](Nat.5)) - Real.1)","function(x0: Real) { x0 + Real.1 = g(x0) }(f(from_nat[Real](Nat.5)) - Real.1)"]}
+{"goal":"from_nat[Real](Nat.7) - Real.1 + Real.1 = from_nat[Real](Nat.7)","proof":["function(x0: Real, x1: Real, x2: Real) { x0 - x1 + x2 = x0 + x2 - x1 }(from_nat[Real](Nat.7), Real.1, Real.1)","function(x0: Real, x1: Real) { x0 + x1 - x1 = x0 }(from_nat[Real](Nat.7), Real.1)"]}
+{"goal":"g(f(from_nat[Real](Nat.5)) - Real.1) = from_nat[Real](Nat.7)","proof":["f(from_nat[Real](Nat.5)) - Real.1 + Real.1 = from_nat[Real](Nat.7)","f(from_nat[Real](Nat.5)) - Real.1 + Real.1 != from_nat[Real](Nat.7)"]}
+{"goal":"mathd_algebra_346","proof":[]}
+{"goal":"(x + from_nat[Real](Nat.3)) * (from_nat[Real](Nat.2) * x - from_nat[Real](Nat.6)) = x * (from_nat[Real](Nat.2) * x - from_nat[Real](Nat.6)) + from_nat[Real](Nat.3) * (from_nat[Real](Nat.2) * x - from_nat[Real](Nat.6))","proof":["function(x0: Real, x1: Real, x2: Real) { x0 * x1 + x2 * x1 = (x0 + x2) * x1 }(x, from_nat[Real](Nat.2) * x - from_nat[Real](Nat.6), from_nat[Real](Nat.3))"]}
+{"goal":"x * (from_nat[Real](Nat.2) * x - from_nat[Real](Nat.6)) = x * (from_nat[Real](Nat.2) * x) - x * from_nat[Real](Nat.6)","proof":[]}
+{"goal":"x * (from_nat[Real](Nat.2) * x) = from_nat[Real](Nat.2) * (x * x)","proof":["from_nat[Real](Nat.2) * (x * x) = x * from_nat[Real](Nat.2) * x","from_nat[Real](Nat.2) * (x * x) != x * from_nat[Real](Nat.2) * x"]}
+{"goal":"x * (from_nat[Real](Nat.2) * x - from_nat[Real](Nat.6)) = from_nat[Real](Nat.2) * (x * x) - x * from_nat[Real](Nat.6)","proof":["x * (from_nat[Real](Nat.2) * x) - x * from_nat[Real](Nat.6) != x * (from_nat[Real](Nat.2) * x - from_nat[Real](Nat.6))"]}
+{"goal":"from_nat[Real](Nat.3) * (from_nat[Real](Nat.2) * x - from_nat[Real](Nat.6)) = from_nat[Real](Nat.3) * (from_nat[Real](Nat.2) * x) - from_nat[Real](Nat.3) * from_nat[Real](Nat.6)","proof":[]}
+{"goal":"from_nat[Real](Nat.3) * from_nat[Real](Nat.2) = from_nat[Real](Nat.6)","proof":["from_nat[Real](Nat.3) * from_nat[Real](Nat.2) != from_nat[Real](Nat.3 * Nat.2)"]}
+{"goal":"from_nat[Real](Nat.3) * (from_nat[Real](Nat.2) * x) = from_nat[Real](Nat.6) * x","proof":["from_nat[Real](Nat.3) * (from_nat[Real](Nat.2) * x) != from_nat[Real](Nat.3) * from_nat[Real](Nat.2) * x"]}
+{"goal":"from_nat[Real](Nat.3) * from_nat[Real](Nat.6) = from_nat[Real](Nat.18)","proof":["from_nat[Real](Nat.3) * from_nat[Real](Nat.6) != from_nat[Real](Nat.3 * Nat.6)"]}
+{"goal":"from_nat[Real](Nat.3) * (from_nat[Real](Nat.2) * x - from_nat[Real](Nat.6)) = from_nat[Real](Nat.6) * x - from_nat[Real](Nat.18)","proof":["from_nat[Real](Nat.3) * (from_nat[Real](Nat.2) * x) - from_nat[Real](Nat.18) != from_nat[Real](Nat.3) * (from_nat[Real](Nat.2) * x - from_nat[Real](Nat.6))","from_nat[Real](Nat.3) * (from_nat[Real](Nat.2) * x) - from_nat[Real](Nat.18) = from_nat[Real](Nat.3) * (from_nat[Real](Nat.2) * x - from_nat[Real](Nat.6))"]}
+{"goal":"x * from_nat[Real](Nat.6) = from_nat[Real](Nat.6) * x","proof":[]}
+{"goal":"x * (from_nat[Real](Nat.2) * x - from_nat[Real](Nat.6)) + from_nat[Real](Nat.3) * (from_nat[Real](Nat.2) * x - from_nat[Real](Nat.6)) = from_nat[Real](Nat.2) * (x * x) - x * from_nat[Real](Nat.6) + (from_nat[Real](Nat.6) * x - from_nat[Real](Nat.18))","proof":[]}
+{"goal":"from_nat[Real](Nat.2) * (x * x) - x * from_nat[Real](Nat.6) + (from_nat[Real](Nat.6) * x - from_nat[Real](Nat.18)) = from_nat[Real](Nat.2) * (x * x) - from_nat[Real](Nat.6) * x + (from_nat[Real](Nat.6) * x - from_nat[Real](Nat.18))","proof":[]}
+{"goal":"from_nat[Real](Nat.2) * (x * x) - from_nat[Real](Nat.6) * x + (from_nat[Real](Nat.6) * x - from_nat[Real](Nat.18)) = from_nat[Real](Nat.2) * (x * x) - from_nat[Real](Nat.18)","proof":[]}
+{"goal":"x * (from_nat[Real](Nat.2) * x - from_nat[Real](Nat.6)) + from_nat[Real](Nat.3) * (from_nat[Real](Nat.2) * x - from_nat[Real](Nat.6)) = from_nat[Real](Nat.2) * (x * x) - from_nat[Real](Nat.18)","proof":[]}
+{"goal":"mathd_algebra_432","proof":["function(x0: Real, x1: Real, x2: Real) { x0 * x1 + x2 * x1 = (x0 + x2) * x1 }(x, from_nat[Real](Nat.2) * x - from_nat[Real](Nat.6), from_nat[Real](Nat.3))","x * (from_nat[Real](Nat.2) * x - from_nat[Real](Nat.6)) + from_nat[Real](Nat.3) * (from_nat[Real](Nat.2) * x - from_nat[Real](Nat.6)) != from_nat[Real](Nat.2) * (x * x) - from_nat[Real](Nat.18)"]}
+{"goal":"g(from_nat[Real](Nat.2)) = from_nat[Real](Nat.2) * from_nat[Real](Nat.2) + from_nat[Real](Nat.3)","proof":["function(x0: Real) { f(x0) = x0 + Real.1 and g(x0) = x0 * x0 + from_nat[Real](Nat.3) }(from_nat[Real](Nat.2))","function(x0: Real) { x0 * x0 + from_nat[Real](Nat.3) = g(x0) }(from_nat[Real](Nat.2))"]}
+{"goal":"from_nat[Real](Nat.2) * from_nat[Real](Nat.2) = from_nat[Real](Nat.4)","proof":["from_nat[Real](Nat.2) * from_nat[Real](Nat.2) != from_nat[Real](Nat.2 * Nat.2)"]}
+{"goal":"from_nat[Real](Nat.4) + from_nat[Real](Nat.3) = from_nat[Real](Nat.7)","proof":["from_nat[Real](Nat.4) + from_nat[Real](Nat.3) != from_nat[Real](Nat.4 + Nat.3)"]}
+{"goal":"from_nat[Real](Nat.2) * from_nat[Real](Nat.2) + from_nat[Real](Nat.3) = from_nat[Real](Nat.7)","proof":[]}
+{"goal":"g(from_nat[Real](Nat.2)) = from_nat[Real](Nat.7)","proof":["from_nat[Real](Nat.2) * from_nat[Real](Nat.2) + from_nat[Real](Nat.3) != g(from_nat[Real](Nat.2))"]}
+{"goal":"f(g(from_nat[Real](Nat.2))) = g(from_nat[Real](Nat.2)) + Real.1","proof":["function(x0: Real) { f(x0) = x0 + Real.1 and g(x0) = x0 * x0 + from_nat[Real](Nat.3) }(g(from_nat[Real](Nat.2)))","function(x0: Real) { x0 + Real.1 = f(x0) }(g(from_nat[Real](Nat.2)))"]}
+{"goal":"from_nat[Real](Nat.7) + Real.1 = from_nat[Real](Nat.8)","proof":["function[T0: lib(semiring.base).Semiring] { from_nat[T0](Nat.1) = T0.1 }[Real]","from_nat[Real](Nat.7) + Real.1 != from_nat[Real](Nat.7 + Nat.1)","from_nat[Real](Nat.7) + Real.1 = from_nat[Real](Nat.7 + Nat.1)"]}
+{"goal":"f(g(from_nat[Real](Nat.2))) = from_nat[Real](Nat.8)","proof":["g(from_nat[Real](Nat.2)) + Real.1 = from_nat[Real](Nat.8)","g(from_nat[Real](Nat.2)) + Real.1 != from_nat[Real](Nat.8)"]}
+{"goal":"mathd_algebra_143","proof":[]}
+{"goal":"f(Real.1) = from_nat[Real](Nat.5) * Real.1 + from_nat[Real](Nat.4)","proof":["function(x0: Real) { from_nat[Real](Nat.5) * x0 + from_nat[Real](Nat.4) = f(x0) }(Real.1)"]}
+{"goal":"from_nat[Real](Nat.5) * Real.1 = from_nat[Real](Nat.5)","proof":[]}
+{"goal":"f(Real.1) = from_nat[Real](Nat.5) + from_nat[Real](Nat.4)","proof":["from_nat[Real](Nat.5) * Real.1 + from_nat[Real](Nat.4) != f(Real.1)"]}
+{"goal":"from_nat[Real](Nat.5 + Nat.4) = from_nat[Real](Nat.5) + from_nat[Real](Nat.4)","proof":[]}
+{"goal":"Nat.5 + Nat.4 = Nat.9","proof":[]}
+{"goal":"from_nat[Real](Nat.9) = from_nat[Real](Nat.5) + from_nat[Real](Nat.4)","proof":["from_nat[Real](Nat.5) + from_nat[Real](Nat.4) != from_nat[Real](Nat.5 + Nat.4)"]}
+{"goal":"f(Real.1) = from_nat[Real](Nat.9)","proof":["from_nat[Real](Nat.5) + from_nat[Real](Nat.4) != from_nat[Real](Nat.9)"]}
+{"goal":"mathd_algebra_171","proof":[]}

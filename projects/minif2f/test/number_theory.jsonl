@@ -1,0 +1,194 @@
+{"goal":"Nat.1 < Nat.1 + Nat.8.suc","proof":[]}
+{"goal":"Nat.8.suc = Nat.9","proof":[]}
+{"goal":"Nat.1 + Nat.9 = Nat.10","proof":[]}
+{"goal":"one_lt_ten","proof":["not Nat.1 < Nat.1 + Nat.9","Nat.1 < Nat.1 + Nat.9"]}
+{"goal":"Nat.3 < Nat.3 + Nat.6.suc","proof":[]}
+{"goal":"Nat.6.suc = Nat.7","proof":[]}
+{"goal":"Nat.3 + Nat.7 = Nat.10","proof":[]}
+{"goal":"three_lt_ten","proof":["not Nat.3 < Nat.3 + Nat.7","Nat.3 < Nat.3 + Nat.7"]}
+{"goal":"Nat.5 < Nat.5 + Nat.4.suc","proof":[]}
+{"goal":"Nat.4.suc = Nat.5","proof":[]}
+{"goal":"Nat.5 + Nat.5 = Nat.10","proof":[]}
+{"goal":"five_lt_ten","proof":["not Nat.5 < Nat.5 + Nat.5","Nat.5 < Nat.5 + Nat.5"]}
+{"goal":"Nat.10 = Nat.9.suc","proof":[]}
+{"goal":"Nat.3 * Nat.10 = Nat.3 * Nat.9 + Nat.3","proof":["function(x0: Nat, x1: Nat, x2: Nat) { x0.suc != x1 or x2 * x0 + x2 = x2 * x1 }(Nat.9, Nat.10, Nat.3)"]}
+{"goal":"Nat.3 * Nat.9 = Nat.27","proof":[]}
+{"goal":"Nat.27 + Nat.3 = Nat.30","proof":[]}
+{"goal":"three_mul_ten","proof":["Nat.3 * Nat.9 + Nat.3 = Nat.30","Nat.3 * Nat.9 + Nat.3 != Nat.30"]}
+{"goal":"Nat.10 = Nat.9.suc","proof":[]}
+{"goal":"Nat.4 * Nat.10 = Nat.4 * Nat.9 + Nat.4","proof":["function(x0: Nat, x1: Nat, x2: Nat) { x0.suc != x1 or x2 * x0 + x2 = x2 * x1 }(Nat.9, Nat.10, Nat.4)"]}
+{"goal":"Nat.4 * Nat.9 = Nat.36","proof":[]}
+{"goal":"Nat.36 + Nat.4 = Nat.40","proof":[]}
+{"goal":"four_mul_ten","proof":["Nat.4 * Nat.9 + Nat.4 = Nat.40","Nat.4 * Nat.9 + Nat.4 != Nat.40"]}
+{"goal":"Nat.1 * Nat.10 = Nat.10","proof":[]}
+{"goal":"Nat.10 + Nat.1 = Nat.11","proof":[]}
+{"goal":"Nat.1 * Nat.10 + Nat.1 = Nat.11","proof":["Nat.10 + Nat.1 != Nat.11"]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.1 * Nat.10 + Nat.1)(Nat.10) = lib(nat.nat_base).nat_mod(Nat.1)(Nat.10)","proof":[]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.1)(Nat.10) = Nat.1","proof":["not Nat.1 < Nat.10"]}
+{"goal":"eleven_mod_ten","proof":["lib(nat.nat_base).nat_mod(Nat.1, Nat.10) = Nat.1","lib(nat.nat_base).nat_mod(Nat.1 * Nat.10 + Nat.1, Nat.10) != Nat.1","lib(nat.nat_base).nat_mod(Nat.1 * Nat.10 + Nat.1, Nat.10) = Nat.1"]}
+{"goal":"Nat.1 * Nat.10 = Nat.10","proof":[]}
+{"goal":"Nat.10 + Nat.3 = Nat.13","proof":[]}
+{"goal":"Nat.1 * Nat.10 + Nat.3 = Nat.13","proof":["Nat.10 + Nat.3 != Nat.13"]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.1 * Nat.10 + Nat.3)(Nat.10) = lib(nat.nat_base).nat_mod(Nat.3)(Nat.10)","proof":[]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.3)(Nat.10) = Nat.3","proof":["not Nat.3 < Nat.10"]}
+{"goal":"thirteen_mod_ten","proof":["lib(nat.nat_base).nat_mod(Nat.3, Nat.10) = Nat.3","lib(nat.nat_base).nat_mod(Nat.1 * Nat.10 + Nat.3, Nat.10) != Nat.3","lib(nat.nat_base).nat_mod(Nat.1 * Nat.10 + Nat.3, Nat.10) = Nat.3"]}
+{"goal":"Nat.1 * Nat.10 = Nat.10","proof":[]}
+{"goal":"Nat.10 + Nat.5 = Nat.15","proof":[]}
+{"goal":"Nat.1 * Nat.10 + Nat.5 = Nat.15","proof":["Nat.10 + Nat.5 != Nat.15"]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.1 * Nat.10 + Nat.5)(Nat.10) = lib(nat.nat_base).nat_mod(Nat.5)(Nat.10)","proof":[]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.5)(Nat.10) = Nat.5","proof":["not Nat.5 < Nat.10"]}
+{"goal":"fifteen_mod_ten","proof":["lib(nat.nat_base).nat_mod(Nat.5, Nat.10) = Nat.5","lib(nat.nat_base).nat_mod(Nat.1 * Nat.10 + Nat.5, Nat.10) != Nat.5","lib(nat.nat_base).nat_mod(Nat.1 * Nat.10 + Nat.5, Nat.10) = Nat.5"]}
+{"goal":"Nat.3 * Nat.10 = Nat.30","proof":[]}
+{"goal":"Nat.30 + Nat.5 = Nat.35","proof":[]}
+{"goal":"Nat.3 * Nat.10 + Nat.5 = Nat.35","proof":["Nat.30 + Nat.5 != Nat.35"]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.3 * Nat.10 + Nat.5)(Nat.10) = lib(nat.nat_base).nat_mod(Nat.5)(Nat.10)","proof":[]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.5)(Nat.10) = Nat.5","proof":["not Nat.5 < Nat.10"]}
+{"goal":"thirty_five_mod_ten","proof":["lib(nat.nat_base).nat_mod(Nat.5, Nat.10) = Nat.5","lib(nat.nat_base).nat_mod(Nat.3 * Nat.10 + Nat.5, Nat.10) != Nat.5","lib(nat.nat_base).nat_mod(Nat.3 * Nat.10 + Nat.5, Nat.10) = Nat.5"]}
+{"goal":"Nat.4 * Nat.10 = Nat.40","proof":[]}
+{"goal":"Nat.40 + Nat.5 = Nat.45","proof":[]}
+{"goal":"Nat.4 * Nat.10 + Nat.5 = Nat.45","proof":["Nat.40 + Nat.5 != Nat.45"]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.4 * Nat.10 + Nat.5)(Nat.10) = lib(nat.nat_base).nat_mod(Nat.5)(Nat.10)","proof":[]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.5)(Nat.10) = Nat.5","proof":["not Nat.5 < Nat.10"]}
+{"goal":"forty_five_mod_ten","proof":["lib(nat.nat_base).nat_mod(Nat.5, Nat.10) = Nat.5","lib(nat.nat_base).nat_mod(Nat.4 * Nat.10 + Nat.5, Nat.10) != Nat.5","lib(nat.nat_base).nat_mod(Nat.4 * Nat.10 + Nat.5, Nat.10) = Nat.5"]}
+{"goal":"Nat.1 < Nat.1 + Nat.5.suc","proof":[]}
+{"goal":"Nat.5.suc = Nat.6","proof":[]}
+{"goal":"Nat.1 + Nat.6 = Nat.7","proof":[]}
+{"goal":"one_lt_seven","proof":["not Nat.1 < Nat.1 + Nat.6","Nat.1 < Nat.1 + Nat.6"]}
+{"goal":"Nat.2 < Nat.2 + Nat.4.suc","proof":[]}
+{"goal":"Nat.4.suc = Nat.5","proof":[]}
+{"goal":"Nat.2 + Nat.5 = Nat.7","proof":[]}
+{"goal":"two_lt_seven","proof":["not Nat.2 < Nat.2 + Nat.5","Nat.2 < Nat.2 + Nat.5"]}
+{"goal":"Nat.3 < Nat.3 + Nat.3.suc","proof":[]}
+{"goal":"Nat.3.suc = Nat.4","proof":[]}
+{"goal":"Nat.3 + Nat.4 = Nat.7","proof":[]}
+{"goal":"three_lt_seven","proof":["not Nat.3 < Nat.3 + Nat.4","Nat.3 < Nat.3 + Nat.4"]}
+{"goal":"Nat.4 < Nat.4 + Nat.2.suc","proof":[]}
+{"goal":"Nat.2.suc = Nat.3","proof":[]}
+{"goal":"Nat.4 + Nat.3 = Nat.7","proof":[]}
+{"goal":"four_lt_seven","proof":["not Nat.4 < Nat.4 + Nat.3","Nat.4 < Nat.4 + Nat.3"]}
+{"goal":"Nat.5 < Nat.5 + Nat.1.suc","proof":[]}
+{"goal":"Nat.1.suc = Nat.2","proof":[]}
+{"goal":"Nat.5 + Nat.2 = Nat.7","proof":[]}
+{"goal":"five_lt_seven","proof":["not Nat.5 < Nat.5 + Nat.2","Nat.5 < Nat.5 + Nat.2"]}
+{"goal":"Nat.6 < Nat.6 + Nat.0.suc","proof":[]}
+{"goal":"Nat.0.suc = Nat.1","proof":[]}
+{"goal":"Nat.6 + Nat.1 = Nat.7","proof":[]}
+{"goal":"six_lt_seven","proof":["not Nat.6 < Nat.6 + Nat.1","Nat.6 < Nat.6 + Nat.1"]}
+{"goal":"one_mod_seven","proof":["not Nat.1 < Nat.7"]}
+{"goal":"four_mod_seven","proof":["not Nat.4 < Nat.7"]}
+{"goal":"Nat.3 * Nat.7 = Nat.21","proof":[]}
+{"goal":"Nat.21 + Nat.4 = Nat.25","proof":[]}
+{"goal":"Nat.3 * Nat.7 + Nat.4 = Nat.25","proof":["Nat.21 + Nat.4 != Nat.25"]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.3 * Nat.7 + Nat.4)(Nat.7) = lib(nat.nat_base).nat_mod(Nat.4)(Nat.7)","proof":[]}
+{"goal":"twenty_five_mod_seven","proof":["lib(nat.nat_base).nat_mod(Nat.3 * Nat.7 + Nat.4, Nat.7) != Nat.4","lib(nat.nat_base).nat_mod(Nat.3 * Nat.7 + Nat.4, Nat.7) = Nat.4"]}
+{"goal":"Nat.2 * Nat.7 = Nat.14","proof":[]}
+{"goal":"Nat.14 + Nat.6 = Nat.20","proof":[]}
+{"goal":"Nat.2 * Nat.7 + Nat.6 = Nat.20","proof":["Nat.14 + Nat.6 != Nat.20"]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.2 * Nat.7 + Nat.6)(Nat.7) = lib(nat.nat_base).nat_mod(Nat.6)(Nat.7)","proof":[]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.6)(Nat.7) = Nat.6","proof":["not Nat.6 < Nat.7"]}
+{"goal":"twenty_mod_seven","proof":["lib(nat.nat_base).nat_mod(Nat.6, Nat.7) = Nat.6","lib(nat.nat_base).nat_mod(Nat.2 * Nat.7 + Nat.6, Nat.7) != Nat.6","lib(nat.nat_base).nat_mod(Nat.2 * Nat.7 + Nat.6, Nat.7) = Nat.6"]}
+{"goal":"Nat.4 * Nat.7 = Nat.28","proof":[]}
+{"goal":"Nat.28 + Nat.2 = Nat.30","proof":[]}
+{"goal":"Nat.4 * Nat.7 + Nat.2 = Nat.30","proof":["Nat.28 + Nat.2 != Nat.30"]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.4 * Nat.7 + Nat.2)(Nat.7) = lib(nat.nat_base).nat_mod(Nat.2)(Nat.7)","proof":[]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.2)(Nat.7) = Nat.2","proof":["not Nat.2 < Nat.7"]}
+{"goal":"thirty_mod_seven","proof":["lib(nat.nat_base).nat_mod(Nat.2, Nat.7) = Nat.2","lib(nat.nat_base).nat_mod(Nat.4 * Nat.7 + Nat.2, Nat.7) != Nat.2","lib(nat.nat_base).nat_mod(Nat.4 * Nat.7 + Nat.2, Nat.7) = Nat.2"]}
+{"goal":"Nat.1 * Nat.7 = Nat.7","proof":[]}
+{"goal":"Nat.7 + Nat.3 = Nat.10","proof":[]}
+{"goal":"Nat.1 * Nat.7 + Nat.3 = Nat.10","proof":[]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.1 * Nat.7 + Nat.3)(Nat.7) = lib(nat.nat_base).nat_mod(Nat.3)(Nat.7)","proof":[]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.3)(Nat.7) = Nat.3","proof":["not Nat.3 < Nat.7"]}
+{"goal":"ten_mod_seven","proof":["lib(nat.nat_base).nat_mod(Nat.3, Nat.7) = Nat.3","lib(nat.nat_base).nat_mod(Nat.1 * Nat.7 + Nat.3, Nat.7) != Nat.3","lib(nat.nat_base).nat_mod(Nat.1 * Nat.7 + Nat.3, Nat.7) = Nat.3"]}
+{"goal":"Nat.2 * Nat.7 = Nat.14","proof":[]}
+{"goal":"Nat.14 + Nat.1 = Nat.15","proof":[]}
+{"goal":"Nat.2 * Nat.7 + Nat.1 = Nat.15","proof":["Nat.14 + Nat.1 != Nat.15"]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.2 * Nat.7 + Nat.1)(Nat.7) = lib(nat.nat_base).nat_mod(Nat.1)(Nat.7)","proof":[]}
+{"goal":"fifteen_mod_seven","proof":["lib(nat.nat_base).nat_mod(Nat.2 * Nat.7 + Nat.1, Nat.7) != Nat.1","lib(nat.nat_base).nat_mod(Nat.2 * Nat.7 + Nat.1, Nat.7) = Nat.1"]}
+{"goal":"Nat.2 = Nat.1.suc","proof":[]}
+{"goal":"Nat.5.pow(Nat.2) = Nat.5.pow(Nat.1) * Nat.5","proof":["function(x0: Nat) { x0.pow(Nat.2) = x0 * x0 }(Nat.5)","function(x0: Nat) { x0.pow(Nat.1) = x0 }(Nat.5)"]}
+{"goal":"Nat.5.pow(Nat.1) = Nat.5","proof":[]}
+{"goal":"Nat.5 * Nat.5 = Nat.25","proof":[]}
+{"goal":"five_pow_two_mod_seven","proof":[]}
+{"goal":"Nat.3 = Nat.2.suc","proof":[]}
+{"goal":"Nat.5.pow(Nat.3) = Nat.5.pow(Nat.2) * Nat.5","proof":["function[T2: lib(monoid).Monoid](x0: Nat, x1: Nat, x2: T2) { x0.suc != x1 or x2 * x2.pow(x0) = x2.pow(x1) }[Nat](Nat.2, Nat.2.suc, Nat.5)","function(x0: Nat, x1: Nat) { x0 * x1 = x1 * x0 }(Nat.5.pow(Nat.2), Nat.5)","function[T0: lib(monoid).Monoid](x0: T0, x1: Nat) { x0.pow(x1.suc) = x0 * x0.pow(x1) }[Nat](Nat.5, Nat.2)","Nat.5.pow(Nat.2) * Nat.5 != Nat.5.pow(Nat.2.suc)"]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.5.pow(Nat.2) * Nat.5)(Nat.7) = lib(nat.nat_base).nat_mod(lib(nat.nat_base).nat_mod(Nat.5.pow(Nat.2))(Nat.7) * Nat.5)(Nat.7)","proof":[]}
+{"goal":"Nat.4 * Nat.5 = Nat.20","proof":[]}
+{"goal":"five_pow_three_mod_seven","proof":[]}
+{"goal":"Nat.4 = Nat.3.suc","proof":[]}
+{"goal":"Nat.5.pow(Nat.4) = Nat.5.pow(Nat.3) * Nat.5","proof":["function[T2: lib(monoid).Monoid](x0: Nat, x1: Nat, x2: T2) { x0.suc != x1 or x2 * x2.pow(x0) = x2.pow(x1) }[Nat](Nat.3, Nat.3.suc, Nat.5)","function(x0: Nat, x1: Nat) { x0 * x1 = x1 * x0 }(Nat.5.pow(Nat.3), Nat.5)","function[T0: lib(monoid).Monoid](x0: T0, x1: Nat) { x0.pow(x1.suc) = x0 * x0.pow(x1) }[Nat](Nat.5, Nat.3)","Nat.5.pow(Nat.3) * Nat.5 != Nat.5.pow(Nat.3.suc)"]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.5.pow(Nat.3) * Nat.5)(Nat.7) = lib(nat.nat_base).nat_mod(lib(nat.nat_base).nat_mod(Nat.5.pow(Nat.3))(Nat.7) * Nat.5)(Nat.7)","proof":[]}
+{"goal":"Nat.6 * Nat.5 = Nat.30","proof":[]}
+{"goal":"five_pow_four_mod_seven","proof":[]}
+{"goal":"Nat.5 = Nat.4.suc","proof":[]}
+{"goal":"Nat.5.pow(Nat.5) = Nat.5.pow(Nat.4) * Nat.5","proof":["function[T2: lib(monoid).Monoid](x0: Nat, x1: Nat, x2: T2) { x0.suc != x1 or x2 * x2.pow(x0) = x2.pow(x1) }[Nat](Nat.4, Nat.4.suc, Nat.5)","function(x0: Nat, x1: Nat) { x0 * x1 = x1 * x0 }(Nat.5.pow(Nat.4), Nat.5)","function[T0: lib(monoid).Monoid](x0: T0, x1: Nat) { x0.pow(x1.suc) = x0 * x0.pow(x1) }[Nat](Nat.5, Nat.4)","Nat.5.pow(Nat.4) * Nat.5 != Nat.5.pow(Nat.4.suc)"]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.5.pow(Nat.4) * Nat.5)(Nat.7) = lib(nat.nat_base).nat_mod(lib(nat.nat_base).nat_mod(Nat.5.pow(Nat.4))(Nat.7) * Nat.5)(Nat.7)","proof":[]}
+{"goal":"Nat.2 * Nat.5 = Nat.10","proof":[]}
+{"goal":"five_pow_five_mod_seven","proof":[]}
+{"goal":"Nat.6 = Nat.5.suc","proof":[]}
+{"goal":"Nat.5.pow(Nat.6) = Nat.5.pow(Nat.5) * Nat.5","proof":["function[T2: lib(monoid).Monoid](x0: Nat, x1: Nat, x2: T2) { x0.suc != x1 or x2 * x2.pow(x0) = x2.pow(x1) }[Nat](Nat.5, Nat.5.suc, Nat.5)","function(x0: Nat, x1: Nat) { x0 * x1 = x1 * x0 }(Nat.5.pow(Nat.5), Nat.5)","function[T0: lib(monoid).Monoid](x0: T0, x1: Nat) { x0.pow(x1.suc) = x0 * x0.pow(x1) }[Nat](Nat.5, Nat.5)","Nat.5.pow(Nat.5) * Nat.5 != Nat.5.pow(Nat.5.suc)"]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.5.pow(Nat.5) * Nat.5)(Nat.7) = lib(nat.nat_base).nat_mod(lib(nat.nat_base).nat_mod(Nat.5.pow(Nat.5))(Nat.7) * Nat.5)(Nat.7)","proof":[]}
+{"goal":"Nat.3 * Nat.5 = Nat.15","proof":[]}
+{"goal":"five_pow_six_mod_seven","proof":[]}
+{"goal":"Nat.5.pow(Nat.6 * Nat.5) = Nat.5.pow(Nat.6).pow(Nat.5)","proof":[]}
+{"goal":"Nat.6 * Nat.5 = Nat.30","proof":[]}
+{"goal":"Nat.5.pow(Nat.30) = Nat.5.pow(Nat.6).pow(Nat.5)","proof":["Nat.5.pow(Nat.6).pow(Nat.5) != Nat.5.pow(Nat.6 * Nat.5)"]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.5.pow(Nat.6))(Nat.7) = Nat.1","proof":[]}
+{"goal":"Nat.5.pow(Nat.6).congr_mod(Nat.1, Nat.7)","proof":["function(x0: Nat, x1: Nat, x2: Nat) { lib(nat.nat_base).nat_mod(x0, x1) = lib(nat.nat_base).nat_mod(x2, x1) = x0.congr_mod(x2, x1) }(Nat.5.pow(Nat.6), Nat.7, Nat.1)","lib(nat.nat_base).nat_mod(Nat.5.pow(Nat.6), Nat.7) != lib(nat.nat_base).nat_mod(Nat.1, Nat.7)","lib(nat.nat_base).nat_mod(Nat.5.pow(Nat.6), Nat.7) = lib(nat.nat_base).nat_mod(Nat.1, Nat.7)"]}
+{"goal":"Nat.5.pow(Nat.6).pow(Nat.5).congr_mod(Nat.1.pow(Nat.5), Nat.7)","proof":["not Nat.5.pow(Nat.6).congr_mod(Nat.1, Nat.7)"]}
+{"goal":"Nat.1.pow(Nat.5) = Nat.1","proof":[]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.5.pow(Nat.6).pow(Nat.5))(Nat.7) = lib(nat.nat_base).nat_mod(Nat.1)(Nat.7)","proof":["function(x0: Nat, x1: Nat, x2: Nat) { lib(nat.nat_base).nat_mod(x0, x1) = lib(nat.nat_base).nat_mod(x2, x1) = x0.congr_mod(x2, x1) }(Nat.5.pow(Nat.6).pow(Nat.5), Nat.7, Nat.1.pow(Nat.5))","lib(nat.nat_base).nat_mod(Nat.5.pow(Nat.6).pow(Nat.5), Nat.7) != lib(nat.nat_base).nat_mod(Nat.1.pow(Nat.5), Nat.7)","lib(nat.nat_base).nat_mod(Nat.5.pow(Nat.6).pow(Nat.5), Nat.7) = lib(nat.nat_base).nat_mod(Nat.1.pow(Nat.5), Nat.7)"]}
+{"goal":"mathd_numbertheory_229","proof":["lib(nat.nat_base).nat_mod(Nat.5.pow(Nat.6).pow(Nat.5), Nat.7) = Nat.1","lib(nat.nat_base).nat_mod(Nat.5.pow(Nat.6).pow(Nat.5), Nat.7) != Nat.1"]}
+{"goal":"Nat.1 * Nat.3 = Nat.3","proof":[]}
+{"goal":"Nat.3 * Nat.5 = Nat.15","proof":[]}
+{"goal":"odd_product_to_five_mod_ten","proof":["lib(nat.nat_base).nat_mod(Nat.3 * Nat.5, Nat.10) != Nat.5","lib(nat.nat_base).nat_mod(Nat.3 * Nat.5, Nat.10) = Nat.5"]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.1 * Nat.3 * Nat.5 * Nat.7)(Nat.10) = lib(nat.nat_base).nat_mod(lib(nat.nat_base).nat_mod(Nat.1 * Nat.3 * Nat.5)(Nat.10) * Nat.7)(Nat.10)","proof":[]}
+{"goal":"Nat.5 * Nat.7 = Nat.35","proof":[]}
+{"goal":"odd_product_to_seven_mod_ten","proof":[]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.1 * Nat.3 * Nat.5 * Nat.7 * Nat.9)(Nat.10) = lib(nat.nat_base).nat_mod(lib(nat.nat_base).nat_mod(Nat.1 * Nat.3 * Nat.5 * Nat.7)(Nat.10) * Nat.9)(Nat.10)","proof":[]}
+{"goal":"Nat.5 * Nat.9 = Nat.45","proof":[]}
+{"goal":"odd_product_to_nine_mod_ten","proof":[]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.1 * Nat.3 * Nat.5 * Nat.7 * Nat.9 * Nat.11)(Nat.10) = lib(nat.nat_base).nat_mod(lib(nat.nat_base).nat_mod(Nat.1 * Nat.3 * Nat.5 * Nat.7 * Nat.9)(Nat.10) * lib(nat.nat_base).nat_mod(Nat.11)(Nat.10))(Nat.10)","proof":[]}
+{"goal":"Nat.5 * Nat.1 = Nat.5","proof":[]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.5)(Nat.10) = Nat.5","proof":["not Nat.5 < Nat.10"]}
+{"goal":"odd_product_to_eleven_mod_ten","proof":[]}
+{"goal":"Nat.2 = Nat.1.suc","proof":[]}
+{"goal":"Nat.3.pow(Nat.2) = Nat.3.pow(Nat.1) * Nat.3","proof":["function(x0: Nat) { x0.pow(Nat.2) = x0 * x0 }(Nat.3)","function(x0: Nat) { x0.pow(Nat.1) = x0 }(Nat.3)"]}
+{"goal":"Nat.3.pow(Nat.1) = Nat.3","proof":[]}
+{"goal":"Nat.3 * Nat.3 = Nat.9","proof":[]}
+{"goal":"three_pow_two_eq_nine","proof":["Nat.3.pow(Nat.1) * Nat.3 = Nat.9","Nat.3.pow(Nat.1) * Nat.3 != Nat.9"]}
+{"goal":"Nat.3 = Nat.2.suc","proof":[]}
+{"goal":"Nat.3.pow(Nat.3) = Nat.3.pow(Nat.2) * Nat.3","proof":["function[T2: lib(monoid).Monoid](x0: Nat, x1: Nat, x2: T2) { x0.suc != x1 or x2 * x2.pow(x0) = x2.pow(x1) }[Nat](Nat.2, Nat.2.suc, Nat.3)","function(x0: Nat, x1: Nat) { x0 * x1 = x1 * x0 }(Nat.3.pow(Nat.2), Nat.3)","function[T0: lib(monoid).Monoid](x0: T0, x1: Nat) { x0.pow(x1.suc) = x0 * x0.pow(x1) }[Nat](Nat.3, Nat.2)","Nat.3.pow(Nat.2) * Nat.3 != Nat.3.pow(Nat.2.suc)"]}
+{"goal":"Nat.9 * Nat.3 = Nat.27","proof":[]}
+{"goal":"three_pow_three_eq_twenty_seven","proof":["Nat.3.pow(Nat.2) * Nat.3 = Nat.27","Nat.3.pow(Nat.2) * Nat.3 != Nat.27"]}
+{"goal":"Nat.9 + Nat.9 = Nat.18","proof":[]}
+{"goal":"Nat.27 + Nat.18 = Nat.27 + (Nat.9 + Nat.9)","proof":["Nat.9 + Nat.9 != Nat.18"]}
+{"goal":"Nat.27 + (Nat.9 + Nat.9) = Nat.27 + Nat.9 + Nat.9","proof":["function(x0: Nat, x1: Nat, x2: Nat) { x0 + x1 + x2 = x0 + (x1 + x2) }(Nat.27, Nat.9, Nat.9)"]}
+{"goal":"Nat.27 + Nat.9 = Nat.36","proof":[]}
+{"goal":"Nat.36 + Nat.9 = Nat.45","proof":[]}
+{"goal":"twenty_seven_plus_eighteen","proof":[]}
+{"goal":"Nat.6 + Nat.2 = Nat.8","proof":[]}
+{"goal":"Nat.45 + Nat.6 + Nat.2 = Nat.45 + (Nat.6 + Nat.2)","proof":["function(x0: Nat, x1: Nat, x2: Nat) { x0 + x1 + x2 = x0 + (x1 + x2) }(Nat.45, Nat.6, Nat.2)"]}
+{"goal":"Nat.45 + Nat.6 + Nat.2 = Nat.45 + Nat.8","proof":["Nat.45 + (Nat.6 + Nat.2) != Nat.45 + Nat.6 + Nat.2"]}
+{"goal":"Nat.45 + Nat.8 = Nat.53","proof":[]}
+{"goal":"forty_five_plus_six_plus_two","proof":["Nat.45 + Nat.6 + Nat.2 != Nat.45 + Nat.8"]}
+{"goal":"Nat.9 * Nat.6 = Nat.54","proof":[]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.9 * Nat.6)(Nat.6) = Nat.0","proof":[]}
+{"goal":"mathd_numbertheory_342","proof":[]}
+{"goal":"lib(nat.nat_base).nat_mod(Nat.1 * Nat.3 * Nat.5 * Nat.7 * Nat.9 * Nat.11 * Nat.13)(Nat.10) = lib(nat.nat_base).nat_mod(lib(nat.nat_base).nat_mod(Nat.1 * Nat.3 * Nat.5 * Nat.7 * Nat.9 * Nat.11)(Nat.10) * lib(nat.nat_base).nat_mod(Nat.13)(Nat.10))(Nat.10)","proof":[]}
+{"goal":"Nat.5 * Nat.3 = Nat.15","proof":[]}
+{"goal":"mathd_numbertheory_299","proof":["function(x0: Nat, x1: Nat, x2: Nat) { lib(nat.nat_base).nat_mod(lib(nat.nat_base).nat_mod(x0, x1) * lib(nat.nat_base).nat_mod(x2, x1), x1) = lib(nat.nat_base).nat_mod(x0 * x2, x1) }(Nat.1 * Nat.3 * Nat.5 * Nat.7 * Nat.9 * Nat.11, Nat.10, Nat.13)"]}
+{"goal":"mathd_numbertheory_343","proof":[]}
+{"goal":"Nat.3.pow(Nat.3) = Nat.27","proof":[]}
+{"goal":"Nat.1 * Nat.27 = Nat.27","proof":[]}
+{"goal":"Nat.3.pow(Nat.2) = Nat.9","proof":[]}
+{"goal":"Nat.2 * Nat.9 = Nat.18","proof":[]}
+{"goal":"Nat.2 * Nat.3 = Nat.6","proof":[]}
+{"goal":"Nat.27 + Nat.18 = Nat.45","proof":[]}
+{"goal":"Nat.45 + Nat.6 + Nat.2 = Nat.53","proof":[]}
+{"goal":"mathd_numbertheory_85","proof":[]}
+{"goal":"n < m","proof":["not n < n.suc"]}
+{"goal":"m * Nat.1 = m","proof":[]}
+{"goal":"m <= m + Nat.1","proof":["function(x0: Nat, x1: Nat) { exists(k0: Nat) { x0 + k0 = x1 } = x0 <= x1 }(m, m + Nat.1)","not exists(k0: Nat) { m + k0 = m + Nat.1 }","function(x0: Nat) { m + Nat.1 != m + x0 }(Nat.1)"]}
+{"goal":"exists(k0: Nat) { m * k0 <= m + k0 }","proof":["function(x0: Nat) { not m * x0 <= m + x0 }(Nat.1)"]}
+{"goal":"exists(k0: Nat) { n < k0 and exists(k1: Nat) { k0 * k1 <= k0 + k1 } }","proof":["let w0: Nat satisfy { m * w0 <= m + w0 }","function(x0: Nat) { not (n < x0 and exists(k0: Nat) { x0 * k0 <= x0 + k0 }) }(m)","function(x0: Nat) { not exists(k0: Nat) { x0 * k0 <= x0 + k0 } or not n < x0 }(m)"]}
+{"goal":"amc12a_2002_p6","proof":["exists(k0: Nat) { n < k0 and exists(k1: Nat) { k0 * k1 <= k0 + k1 } }"]}

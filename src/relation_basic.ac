@@ -395,30 +395,13 @@ theorem relation_union_monotone[A, B](
 theorem relation_union_comm[A, B](r: (A, B) -> Bool, s: (A, B) -> Bool) {
     relation_union(r, s) = relation_union(s, r)
 } by {
-    let u = relation_union(r, s)
-    let v = relation_union(s, r)
-    forall(x: A, y: B) {
-        if u(x, y) {
-            u(x, y) = (r(x, y) or s(x, y))
-            v(x, y) = (s(x, y) or r(x, y))
-            if r(x, y) {
-                v(x, y)
-            } else {
-                v(x, y)
-            }
-        }
-        if v(x, y) {
-            v(x, y) = (s(x, y) or r(x, y))
-            u(x, y) = (r(x, y) or s(x, y))
-            if s(x, y) {
-                u(x, y)
-            } else {
-                u(x, y)
-            }
-        }
-        u(x, y) = v(x, y)
-    }
-    binary_function_extensionality(u, v)
+    relation_union_right_subset(s, r)
+    relation_union_left_subset(s, r)
+    relation_union_subset(r, s, relation_union(s, r))
+    relation_union_left_subset(r, s)
+    relation_union_right_subset(r, s)
+    relation_union_subset(s, r, relation_union(r, s))
+    relation_eq_iff_subset_both(relation_union(r, s), relation_union(s, r))
 }
 
 /// Relation union is associative.

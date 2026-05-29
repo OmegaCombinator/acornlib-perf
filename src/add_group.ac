@@ -59,6 +59,18 @@ theorem inverse_add[A: AddGroup](a: A, b: A) {
     -(a + b) + a = -b
 }
 
+/// Adding adjacent differences cancels the shared middle term.
+theorem sub_add_sub_cancel[A: AddGroup](a: A, b: A, c: A) {
+    (a - b) + (b - c) = a - c
+} by {
+    (a - b) + (b - c) = (a + -b) + (b + -c)
+    (a + -b) + (b + -c) = a + (-b + b) + -c
+    inverse_left[A](b)
+    -b + b = A.0
+    a + A.0 = a
+    a + A.0 + -c = a + -c
+}
+
 /// True if a function preserves the additive group operation (is a homomorphism).
 define is_add_group_hom[A: AddGroup, B: AddGroup](f: A -> B) -> Bool {
     forall(a: A, b: A) {
