@@ -1,9 +1,29 @@
+{"goal":"real_add_neg_self","proof":["function(x0: Real) { x0 + -x0 = 0 }(x)"]}
+{"goal":"-p + r = r + -p","proof":["function(x0: Real, x1: Real) { x0 + x1 = x1 + x0 }(r, -p)"]}
+{"goal":"-p + r + (p + p) = r + -p + (p + p)","proof":["r + -p != -p + r"]}
+{"goal":"r + -p + (p + p) = r + (-p + (p + p))","proof":["function(x0: Real, x1: Real, x2: Real) { x0 + x1 + x2 = x0 + (x1 + x2) }(r, -p, p + p)"]}
+{"goal":"-p + (p + p) = -p + p + p","proof":["function(x0: Real, x1: Real, x2: Real) { x0 + x1 + x2 = x0 + (x1 + x2) }(-p, p, p)"]}
+{"goal":"-p + p = 0","proof":["function(x0: Real, x1: Real) { x0 + x1 = x1 + x0 }(p, -p)","function(x0: Real) { x0 + -x0 = 0 }(p)"]}
+{"goal":"-p + p + p = p","proof":["function(x0: Real) { 0 + x0 = x0 }(p)"]}
+{"goal":"-p + (p + p) = p","proof":["-p + (p + p) != -p + p + p"]}
+{"goal":"r + -p + (p + p) = r + p","proof":["r + (-p + (p + p)) != r + -p + (p + p)"]}
+{"goal":"-p + r + (p + p) = r + p","proof":["r + -p + (p + p) != r + p"]}
+{"goal":"q + -p + (-p + r) + (p + p) = q + -p + (-p + r + (p + p))","proof":["function(x0: Real, x1: Real, x2: Real) { x0 + x1 + x2 = x0 + (x1 + x2) }(q + -p, -p + r, p + p)"]}
+{"goal":"q + -p + (-p + r) + (p + p) = q + -p + (r + p)","proof":["q + -p + (-p + r + (p + p)) != q + -p + (-p + r) + (p + p)"]}
+{"goal":"r + p = p + r","proof":["function(x0: Real, x1: Real) { x0 + x1 = x1 + x0 }(r, p)"]}
+{"goal":"q + -p + (r + p) = q + -p + (p + r)","proof":["r + p != p + r"]}
+{"goal":"-p + (p + r) = -p + p + r","proof":["function(x0: Real, x1: Real, x2: Real) { x0 + x1 + x2 = x0 + (x1 + x2) }(-p, p, r)"]}
+{"goal":"-p + p = 0","proof":[]}
+{"goal":"-p + p + r = r","proof":["function(x0: Real) { 0 + x0 = x0 }(r)"]}
+{"goal":"-p + (p + r) = r","proof":["-p + (p + r) != -p + p + r"]}
+{"goal":"q + -p + (p + r) = q + r","proof":["function(x0: Real, x1: Real, x2: Real) { x0 + x1 + x2 = x0 + (x1 + x2) }(q, -p, -p + r + (p + p))"]}
+{"goal":"add_two_neg_cancel","proof":["q + -p + (-p + r) + (p + p) != q + -p + (p + r)","q + -p + (-p + r) + (p + p) = q + -p + (p + r)"]}
 {"goal":"a * 1 + a * 1 <= a * a + 1 * 1","proof":[]}
 {"goal":"a + a <= a * a + 1","proof":["function(x0: Real, x1: Real) { x0 <= x1 = x0 <= x1 }(a * 1 + a * 1, a * a + 1 * 1)","function(x0: Real, x1: Real) { x0 <= x1 = x0 <= x1 }(a + a, a * a + 1)","function(x0: Real, x1: Real) { x0 * x1 = x1 * x0 }(a, 1)","function(x0: Real, x1: Real) { x0 + x1 = lib(real.real_base).add(x0, x1) }(a * a, 1 * 1)","function(x0: Real, x1: Real) { x0 + x1 = lib(real.real_base).add(x0, x1) }(a * a, 1)","function(x0: Real, x1: Real) { x0 + x1 = lib(real.real_base).add(x0, x1) }(a * 1, a * 1)","function(x0: Real, x1: Real) { x0 + x1 = lib(real.real_base).add(x0, x1) }(a, a)","function(x0: Real) { 1 * x0 = x0 }(1)","function(x0: Real) { 1 * x0 = x0 }(a)"]}
 {"goal":"a + a + -(a * a) <= a * a + 1 + -(a * a)","proof":["function(x0: Real, x1: Real, x2: Real) { not x0 <= x1 or x0 + x2 <= x1 + x2 }(a + a, a * a + 1, -(a * a))"]}
 {"goal":"a * a + 1 = 1 + a * a","proof":["function(x0: Real, x1: Real) { x0 + x1 = x1 + x0 }(a * a, 1)"]}
 {"goal":"a * a + 1 + -(a * a) = 1 + a * a + -(a * a)","proof":["a * a + 1 != 1 + a * a"]}
-{"goal":"a * a + -(a * a) = 0","proof":["function(x0: Real) { x0 + -x0 = 0 }(a * a)"]}
+{"goal":"a * a + -(a * a) = 0","proof":[]}
 {"goal":"1 + a * a + -(a * a) = 1 + (a * a + -(a * a))","proof":["function(x0: Real, x1: Real, x2: Real) { x0 + x1 + x2 = x0 + (x1 + x2) }(1, a * a, -(a * a))"]}
 {"goal":"1 + (a * a + -(a * a)) = 1","proof":["function(x0: Real, x1: Real) { x0 + x1 = x1 + x0 }(1, a * a + -(a * a))","function(x0: Real) { 0 + x0 = x0 }(Real.one_half + Real.one_half)"]}
 {"goal":"a * a + 1 + -(a * a) = 1","proof":["1 + a * a + -(a * a) != 1","1 + a * a + -(a * a) = 1"]}
@@ -16,3 +36,36 @@
 {"goal":"lhs = a + a + -(a * a)","proof":[]}
 {"goal":"lhs <= 1","proof":["not a + a + -(a * a) <= 1","a + a + -(a * a) <= 1"]}
 {"goal":"algebra_sqineq_at2malt1","proof":[]}
+{"goal":"u * 1 + u * 1 <= u * u + 1 * 1","proof":[]}
+{"goal":"u + u <= u * u + 1","proof":["function(x0: Real, x1: Real) { x0 <= x1 = x0 <= x1 }(u * 1 + u * 1, u * u + 1 * 1)","function(x0: Real, x1: Real) { x0 <= x1 = x0 <= x1 }(u + u, u * u + 1)","function(x0: Real, x1: Real) { x0 * x1 = x1 * x0 }(u, 1)","function(x0: Real, x1: Real) { x0 + x1 = lib(real.real_base).add(x0, x1) }(u * u, 1 * 1)","function(x0: Real, x1: Real) { x0 + x1 = lib(real.real_base).add(x0, x1) }(u * u, 1)","function(x0: Real, x1: Real) { x0 + x1 = lib(real.real_base).add(x0, x1) }(u * 1, u * 1)","function(x0: Real, x1: Real) { x0 + x1 = lib(real.real_base).add(x0, x1) }(u, u)","function(x0: Real) { 1 * x0 = x0 }(1)","function(x0: Real) { 1 * x0 = x0 }(a - b)"]}
+{"goal":"u = a + -b","proof":["function[T0: lib(add_group).AddGroup](x0: T0, x1: T0) { x0 + -x1 = x0 - x1 }[Real](a, b)"]}
+{"goal":"u * u = a * a + a * -b + (a * -b + -b * -b)","proof":["a * a + a * -b + (a * -b + -b * -b) != (a + -b) * u","a * a + a * -b + (a * -b + -b * -b) = (a + -b) * u"]}
+{"goal":"a * -b = -p","proof":["a * -b != -(a * b)"]}
+{"goal":"-b * -b = -(b * -b)","proof":[]}
+{"goal":"b * -b = -(b * b)","proof":[]}
+{"goal":"-b * -b = b * b","proof":["function(x0: Real, x1: Real) { x0 * -x1 = -(x0 * x1) }(b, -b)","function[T0: lib(add_group).AddGroup](x0: T0) { --x0 = x0 }[Real](b)","b * --b = -b * -b","b * --b != -b * -b"]}
+{"goal":"u * u = a * a + -p + (-p + b * b)","proof":[]}
+{"goal":"u * u + (p + p) = a * a + b * b","proof":["a * a + -p + (-p + b * b) + (p + p) != a * a + b * b"]}
+{"goal":"u * u + (p + p) = 1","proof":["a * a + b * b != u * u + (p + p)"]}
+{"goal":"1 + (p + p) = p + p + 1","proof":["function(x0: Real, x1: Real) { x0 + x1 = x1 + x0 }(1, p + p)"]}
+{"goal":"u * u + 1 + (p + p) = u * u + (1 + (p + p))","proof":["function(x0: Real, x1: Real, x2: Real) { x0 + x1 + x2 = x0 + (x1 + x2) }(u * u, 1, p + p)"]}
+{"goal":"u * u + (1 + (p + p)) = u * u + (p + p + 1)","proof":["1 + (p + p) != p + p + 1"]}
+{"goal":"u * u + (p + p + 1) = u * u + (p + p) + 1","proof":["function(x0: Real, x1: Real, x2: Real) { x0 + x1 + x2 = x0 + (x1 + x2) }(u * u, p + p, 1)"]}
+{"goal":"u * u + 1 + (p + p) = u * u + (p + p) + 1","proof":["u * u + (1 + (p + p)) = u * u + (p + p) + 1","u * u + (1 + (p + p)) != u * u + (p + p) + 1"]}
+{"goal":"u * u + (p + p) + 1 = 1 + 1","proof":["u * u + (p + p) != 1"]}
+{"goal":"u * u + 1 + (p + p) = 1 + 1","proof":["u * u + 1 + (p + p) != u * u + (p + p) + 1"]}
+{"goal":"p + p + (u * u + 1) = u * u + 1 + (p + p)","proof":["function(x0: Real, x1: Real) { x0 + x1 = x1 + x0 }(p + p, u * u + 1)"]}
+{"goal":"p + p + (u * u + 1) = 1 + 1","proof":["p + p + (u * u + 1) != u * u + 1 + (p + p)"]}
+{"goal":"p + p + (u + u) <= p + p + (u * u + 1)","proof":["function(x0: Real, x1: Real, x2: Real) { not x0 <= x1 or x2 + x0 <= x2 + x1 }(u + u, u * u + 1, p + p)"]}
+{"goal":"p + p + (u + u) <= 1 + 1","proof":["not p + p + (u + u) <= p + p + (u * u + 1)"]}
+{"goal":"p + p + (u + u) = p + (p + (u + u))","proof":["function(x0: Real, x1: Real, x2: Real) { x0 + x1 + x2 = x0 + (x1 + x2) }(p, p, u + u)"]}
+{"goal":"p + (p + (u + u)) = p + (p + u + u)","proof":["function(x0: Real, x1: Real, x2: Real) { x0 + x1 + x2 = x0 + (x1 + x2) }(p, u, u)","p + (u + u) != p + u + u"]}
+{"goal":"p + u = u + p","proof":["function(x0: Real, x1: Real) { x0 + x1 = x1 + x0 }(p, u)"]}
+{"goal":"p + (p + u + u) = p + (u + p + u)","proof":[]}
+{"goal":"p + (u + p + u) = p + u + (p + u)","proof":["function(x0: Real, x1: Real, x2: Real) { x0 + x1 + x2 = x0 + (x1 + x2) }(p, u, p + u)","function(x0: Real, x1: Real, x2: Real) { x0 + x1 + x2 = x0 + (x1 + x2) }(u, p, u)"]}
+{"goal":"p + p + (u + u) = p + u + (p + u)","proof":[]}
+{"goal":"p + u + (p + u) <= 1 + 1","proof":[]}
+{"goal":"p + u <= Real.one_half * (1 + 1)","proof":["not p + u + (p + u) <= 1 + 1"]}
+{"goal":"Real.one_half * (1 + 1) = 1","proof":[]}
+{"goal":"a * b + (a - b) <= 1","proof":[]}
+{"goal":"algebra_sqineq_unitcircatbpamblt1","proof":[]}

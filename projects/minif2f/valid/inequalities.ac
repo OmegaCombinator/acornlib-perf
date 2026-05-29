@@ -1,8 +1,16 @@
 from real.cauchy_schwarz import real_square_add_expanded
 from real.real_field import Real
-from real.sqrt_inequalities import double_mul_le_square_sum
+from real.real_ring import mul_assoc, real_mul_comm
+from real.sqrt_inequalities import double_le_imp_le_half, double_mul_le_square_sum,
+    one_half_mul_double
 
 numerals Real
+
+/// The real number three.
+let real_three: Real = (1 + 1) + 1
+
+/// The real number six.
+let real_six: Real = real_three + real_three
 
 /// MiniF2F valid problem `algebra_sqineq_2at2pclta2c2p41pc`.
 theorem algebra_sqineq_2at2pclta2c2p41pc(a: Real, c: Real) {
@@ -16,6 +24,9 @@ theorem algebra_sqineq_2at2pclta2c2p41pc(a: Real, c: Real) {
     let rhs = a * a + c * c + four * (1 + c)
     double_mul_le_square_sum(a, b)
     a * b + a * b <= a * a + b * b
+    two * a = (1 + 1) * a
+    (1 + 1) * a = 1 * a + 1 * a
+    1 * a = a
     two * a = a + a
     lhs = (a + a) * b
     (a + a) * b = a * b + a * b
@@ -24,6 +35,8 @@ theorem algebra_sqineq_2at2pclta2c2p41pc(a: Real, c: Real) {
     b * b = two * two + two * c + (two * c + c * c)
     two * two = four
     four * (1 + c) = four * 1 + four * c
+    four * 1 = 1 * four
+    1 * four = four
     four * 1 = four
     four * c = two * c + two * c
     four * (1 + c) = four + (two * c + two * c)
@@ -34,4 +47,99 @@ theorem algebra_sqineq_2at2pclta2c2p41pc(a: Real, c: Real) {
     a * a + (c * c + (four + (two * c + two * c))) = rhs
     a * a + b * b = rhs
     lhs <= rhs
+}
+
+/// MiniF2F valid problem `algebra_sqineq_4bap1lt4bsqpap1sq`.
+theorem algebra_sqineq_4bap1lt4bsqpap1sq(a: Real, b: Real) {
+    ((1 + 1) + (1 + 1)) * b * (a + 1) <=
+        ((1 + 1) + (1 + 1)) * (b * b) + (a + 1) * (a + 1)
+} by {
+    let two = 1 + 1
+    let four = two + two
+    let x = two * b
+    let y = a + 1
+    let lhs = four * b * y
+    let rhs = four * (b * b) + y * y
+    double_mul_le_square_sum(x, y)
+    x * y + x * y <= x * x + y * y
+    x + x = two * b + two * b
+    four * b = (two + two) * b
+    (two + two) * b = two * b + two * b
+    four * b = x + x
+    lhs = (x + x) * y
+    (x + x) * y = x * y + x * y
+    lhs = x * y + x * y
+    x * x = (two * b) * (two * b)
+    (two * b) * (two * b) = (two * two) * (b * b)
+    two * two = four
+    x * x = four * (b * b)
+    x * x + y * y = rhs
+    lhs <= rhs
+}
+
+/// MiniF2F valid problem `algebra_sqineq_2unitcircatblt1`.
+theorem algebra_sqineq_2unitcircatblt1(a: Real, b: Real) {
+    a * a + b * b = 1 + 1 implies a * b <= 1
+} by {
+    double_mul_le_square_sum(a, b)
+    a * b + a * b <= a * a + b * b
+    a * b + a * b <= 1 + 1
+    double_le_imp_le_half(a * b, 1 + 1)
+    a * b <= Real.one_half * (1 + 1)
+    one_half_mul_double(1)
+    Real.one_half * (1 + 1) = 1
+    a * b <= 1
+}
+
+/// MiniF2F valid problem `algebra_sqineq_36azm9asqle36zsq`.
+theorem algebra_sqineq_36azm9asqle36zsq(z: Real, a: Real) {
+    real_six * real_six * (a * z) - real_three * real_three * (a * a) <=
+        real_six * real_six * (z * z)
+} by {
+    let three = real_three
+    let six = real_six
+    let x = three * a
+    let y = six * z
+    let lhs0 = six * six * (a * z)
+    let middle = three * three * (a * a)
+    let rhs = six * six * (z * z)
+    double_mul_le_square_sum(x, y)
+    x * y + x * y <= x * x + y * y
+    six = three + three
+    six * six = (three + three) * six
+    (three + three) * six = three * six + three * six
+    six * six = three * six + three * six
+    lhs0 = (three * six + three * six) * (a * z)
+    (three * six + three * six) * (a * z) =
+        three * six * (a * z) + three * six * (a * z)
+    x * y = (three * a) * (six * z)
+    mul_assoc(three, a, six * z)
+    (three * a) * (six * z) = three * (a * (six * z))
+    mul_assoc(a, six, z)
+    a * (six * z) = a * six * z
+    real_mul_comm(a, six)
+    a * six = six * a
+    a * six * z = six * a * z
+    mul_assoc(six, a, z)
+    six * a * z = six * (a * z)
+    three * (a * (six * z)) = three * (six * (a * z))
+    mul_assoc(three, six, a * z)
+    three * (six * (a * z)) = three * six * (a * z)
+    (three * a) * (six * z) = three * six * (a * z)
+    lhs0 = x * y + x * y
+    x * x = (three * a) * (three * a)
+    (three * a) * (three * a) = three * three * (a * a)
+    x * x = middle
+    y * y = (six * z) * (six * z)
+    (six * z) * (six * z) = six * six * (z * z)
+    y * y = rhs
+    lhs0 <= middle + rhs
+    lhs0 + -middle <= middle + rhs + -middle
+    middle + rhs = rhs + middle
+    middle + rhs + -middle = rhs + middle + -middle
+    middle + -middle = Real.0
+    rhs + middle + -middle = rhs + (middle + -middle)
+    rhs + (middle + -middle) = rhs
+    middle + rhs + -middle = rhs
+    lhs0 + -middle <= rhs
 }

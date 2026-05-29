@@ -1,6 +1,508 @@
 from nat import Nat
-from nat.basic_multiplication import nat_mul_9_6
-from nat.nat_base import mod_mul
+from nat.basic_addition import one_plus_six, one_plus_nine, two_plus_five,
+    three_plus_four, three_plus_seven
+from nat.basic_multiplication import nat_add_10_1, nat_add_10_3, nat_add_10_5,
+    nat_add_14_1, nat_add_14_6, nat_add_21_4, nat_add_27_3, nat_add_27_9,
+    nat_add_28_2, nat_add_30_5, nat_add_36_4, nat_add_36_9, nat_add_40_5,
+    nat_add_45_8, nat_add_4_3, nat_add_5_2, nat_add_5_5, nat_add_5_3, nat_add_6_1,
+    nat_add_6_2, nat_add_7_3, nat_add_9_9, nat_mul_1_3, nat_mul_2_3,
+    nat_mul_2_5, nat_mul_2_7, nat_mul_2_9, nat_mul_3_5, nat_mul_3_7,
+    nat_mul_3_9, nat_mul_4_5, nat_mul_4_7, nat_mul_4_9, nat_mul_5_1,
+    nat_mul_5_3, nat_mul_5_5, nat_mul_5_7, nat_mul_5_9, nat_mul_6_5,
+    nat_mul_9_3, nat_mul_9_6
+from nat.nat_base import lt_add_suc, lt_suc, mod_mul, mul_one_left, mul_one_right, small_mod
+from nat.nat_congruence import congr_mod_pow, mod_add_mul, mod_mul_eq, mod_mul_left_eq
+from nat.nat_monoid import exp_mul, exp_one, one_exp
+
+/// One is less than ten.
+theorem one_lt_ten {
+    Nat.1 < Nat.10
+} by {
+    lt_add_suc(Nat.1, Nat.8)
+    Nat.1 < Nat.1 + Nat.8.suc
+    Nat.8.suc = Nat.9
+    one_plus_nine
+    Nat.1 + Nat.9 = Nat.10
+}
+
+/// Three is less than ten.
+theorem three_lt_ten {
+    Nat.3 < Nat.10
+} by {
+    lt_add_suc(Nat.3, Nat.6)
+    Nat.3 < Nat.3 + Nat.6.suc
+    Nat.6.suc = Nat.7
+    three_plus_seven
+    Nat.3 + Nat.7 = Nat.10
+}
+
+/// Five is less than ten.
+theorem five_lt_ten {
+    Nat.5 < Nat.10
+} by {
+    lt_add_suc(Nat.5, Nat.4)
+    Nat.5 < Nat.5 + Nat.4.suc
+    Nat.4.suc = Nat.5
+    nat_add_5_5
+    Nat.5 + Nat.5 = Nat.10
+}
+
+/// Three times ten is thirty.
+theorem three_mul_ten {
+    Nat.3 * Nat.10 = Nat.30
+} by {
+    Nat.10 = Nat.9.suc
+    Nat.3 * Nat.10 = Nat.3 * Nat.9 + Nat.3
+    nat_mul_3_9
+    Nat.3 * Nat.9 = Nat.27
+    nat_add_27_3
+    Nat.27 + Nat.3 = Nat.30
+}
+
+/// Four times ten is forty.
+theorem four_mul_ten {
+    Nat.4 * Nat.10 = Nat.40
+} by {
+    Nat.10 = Nat.9.suc
+    Nat.4 * Nat.10 = Nat.4 * Nat.9 + Nat.4
+    nat_mul_4_9
+    Nat.4 * Nat.9 = Nat.36
+    nat_add_36_4
+    Nat.36 + Nat.4 = Nat.40
+}
+
+/// Eleven has remainder one modulo ten.
+theorem eleven_mod_ten {
+    Nat.11.mod(Nat.10) = Nat.1
+} by {
+    mul_one_left(Nat.10)
+    Nat.1 * Nat.10 = Nat.10
+    nat_add_10_1
+    Nat.10 + Nat.1 = Nat.11
+    Nat.1 * Nat.10 + Nat.1 = Nat.11
+    mod_add_mul(Nat.1, Nat.10, Nat.1)
+    (Nat.1 * Nat.10 + Nat.1).mod(Nat.10) = Nat.1.mod(Nat.10)
+    one_lt_ten
+    small_mod(Nat.1, Nat.10)
+    Nat.1.mod(Nat.10) = Nat.1
+}
+
+/// Thirteen has remainder three modulo ten.
+theorem thirteen_mod_ten {
+    Nat.13.mod(Nat.10) = Nat.3
+} by {
+    mul_one_left(Nat.10)
+    Nat.1 * Nat.10 = Nat.10
+    nat_add_10_3
+    Nat.10 + Nat.3 = Nat.13
+    Nat.1 * Nat.10 + Nat.3 = Nat.13
+    mod_add_mul(Nat.1, Nat.10, Nat.3)
+    (Nat.1 * Nat.10 + Nat.3).mod(Nat.10) = Nat.3.mod(Nat.10)
+    three_lt_ten
+    small_mod(Nat.3, Nat.10)
+    Nat.3.mod(Nat.10) = Nat.3
+}
+
+/// Fifteen has remainder five modulo ten.
+theorem fifteen_mod_ten {
+    Nat.15.mod(Nat.10) = Nat.5
+} by {
+    mul_one_left(Nat.10)
+    Nat.1 * Nat.10 = Nat.10
+    nat_add_10_5
+    Nat.10 + Nat.5 = Nat.15
+    Nat.1 * Nat.10 + Nat.5 = Nat.15
+    mod_add_mul(Nat.1, Nat.10, Nat.5)
+    (Nat.1 * Nat.10 + Nat.5).mod(Nat.10) = Nat.5.mod(Nat.10)
+    five_lt_ten
+    small_mod(Nat.5, Nat.10)
+    Nat.5.mod(Nat.10) = Nat.5
+}
+
+/// Thirty-five has remainder five modulo ten.
+theorem thirty_five_mod_ten {
+    Nat.35.mod(Nat.10) = Nat.5
+} by {
+    three_mul_ten
+    Nat.3 * Nat.10 = Nat.30
+    nat_add_30_5
+    Nat.30 + Nat.5 = Nat.35
+    Nat.3 * Nat.10 + Nat.5 = Nat.35
+    mod_add_mul(Nat.3, Nat.10, Nat.5)
+    (Nat.3 * Nat.10 + Nat.5).mod(Nat.10) = Nat.5.mod(Nat.10)
+    five_lt_ten
+    small_mod(Nat.5, Nat.10)
+    Nat.5.mod(Nat.10) = Nat.5
+}
+
+/// Forty-five has remainder five modulo ten.
+theorem forty_five_mod_ten {
+    Nat.45.mod(Nat.10) = Nat.5
+} by {
+    four_mul_ten
+    Nat.4 * Nat.10 = Nat.40
+    nat_add_40_5
+    Nat.40 + Nat.5 = Nat.45
+    Nat.4 * Nat.10 + Nat.5 = Nat.45
+    mod_add_mul(Nat.4, Nat.10, Nat.5)
+    (Nat.4 * Nat.10 + Nat.5).mod(Nat.10) = Nat.5.mod(Nat.10)
+    five_lt_ten
+    small_mod(Nat.5, Nat.10)
+    Nat.5.mod(Nat.10) = Nat.5
+}
+
+/// One is less than seven.
+theorem one_lt_seven {
+    Nat.1 < Nat.7
+} by {
+    lt_add_suc(Nat.1, Nat.5)
+    Nat.1 < Nat.1 + Nat.5.suc
+    Nat.5.suc = Nat.6
+    one_plus_six
+    Nat.1 + Nat.6 = Nat.7
+}
+
+/// Two is less than seven.
+theorem two_lt_seven {
+    Nat.2 < Nat.7
+} by {
+    lt_add_suc(Nat.2, Nat.4)
+    Nat.2 < Nat.2 + Nat.4.suc
+    Nat.4.suc = Nat.5
+    two_plus_five
+    Nat.2 + Nat.5 = Nat.7
+}
+
+/// Three is less than seven.
+theorem three_lt_seven {
+    Nat.3 < Nat.7
+} by {
+    lt_add_suc(Nat.3, Nat.3)
+    Nat.3 < Nat.3 + Nat.3.suc
+    Nat.3.suc = Nat.4
+    three_plus_four
+    Nat.3 + Nat.4 = Nat.7
+}
+
+/// Four is less than seven.
+theorem four_lt_seven {
+    Nat.4 < Nat.7
+} by {
+    lt_add_suc(Nat.4, Nat.2)
+    Nat.4 < Nat.4 + Nat.2.suc
+    Nat.2.suc = Nat.3
+    nat_add_4_3
+    Nat.4 + Nat.3 = Nat.7
+}
+
+/// Five is less than seven.
+theorem five_lt_seven {
+    Nat.5 < Nat.7
+} by {
+    lt_add_suc(Nat.5, Nat.1)
+    Nat.5 < Nat.5 + Nat.1.suc
+    Nat.1.suc = Nat.2
+    nat_add_5_2
+    Nat.5 + Nat.2 = Nat.7
+}
+
+/// Six is less than seven.
+theorem six_lt_seven {
+    Nat.6 < Nat.7
+} by {
+    lt_add_suc(Nat.6, Nat.0)
+    Nat.6 < Nat.6 + Nat.0.suc
+    Nat.0.suc = Nat.1
+    nat_add_6_1
+    Nat.6 + Nat.1 = Nat.7
+}
+
+/// One has remainder one modulo seven.
+theorem one_mod_seven {
+    Nat.1.mod(Nat.7) = Nat.1
+} by {
+    one_lt_seven
+    small_mod(Nat.1, Nat.7)
+}
+
+/// Four has remainder four modulo seven.
+theorem four_mod_seven {
+    Nat.4.mod(Nat.7) = Nat.4
+} by {
+    four_lt_seven
+    small_mod(Nat.4, Nat.7)
+}
+
+/// Twenty-five has remainder four modulo seven.
+theorem twenty_five_mod_seven {
+    Nat.25.mod(Nat.7) = Nat.4
+} by {
+    nat_mul_3_7
+    Nat.3 * Nat.7 = Nat.21
+    nat_add_21_4
+    Nat.21 + Nat.4 = Nat.25
+    Nat.3 * Nat.7 + Nat.4 = Nat.25
+    mod_add_mul(Nat.3, Nat.7, Nat.4)
+    (Nat.3 * Nat.7 + Nat.4).mod(Nat.7) = Nat.4.mod(Nat.7)
+    four_mod_seven
+}
+
+/// Twenty has remainder six modulo seven.
+theorem twenty_mod_seven {
+    Nat.20.mod(Nat.7) = Nat.6
+} by {
+    nat_mul_2_7
+    Nat.2 * Nat.7 = Nat.14
+    nat_add_14_6
+    Nat.14 + Nat.6 = Nat.20
+    Nat.2 * Nat.7 + Nat.6 = Nat.20
+    mod_add_mul(Nat.2, Nat.7, Nat.6)
+    (Nat.2 * Nat.7 + Nat.6).mod(Nat.7) = Nat.6.mod(Nat.7)
+    six_lt_seven
+    small_mod(Nat.6, Nat.7)
+    Nat.6.mod(Nat.7) = Nat.6
+}
+
+/// Thirty has remainder two modulo seven.
+theorem thirty_mod_seven {
+    Nat.30.mod(Nat.7) = Nat.2
+} by {
+    nat_mul_4_7
+    Nat.4 * Nat.7 = Nat.28
+    nat_add_28_2
+    Nat.28 + Nat.2 = Nat.30
+    Nat.4 * Nat.7 + Nat.2 = Nat.30
+    mod_add_mul(Nat.4, Nat.7, Nat.2)
+    (Nat.4 * Nat.7 + Nat.2).mod(Nat.7) = Nat.2.mod(Nat.7)
+    two_lt_seven
+    small_mod(Nat.2, Nat.7)
+    Nat.2.mod(Nat.7) = Nat.2
+}
+
+/// Ten has remainder three modulo seven.
+theorem ten_mod_seven {
+    Nat.10.mod(Nat.7) = Nat.3
+} by {
+    mul_one_left(Nat.7)
+    Nat.1 * Nat.7 = Nat.7
+    nat_add_7_3
+    Nat.7 + Nat.3 = Nat.10
+    Nat.1 * Nat.7 + Nat.3 = Nat.10
+    mod_add_mul(Nat.1, Nat.7, Nat.3)
+    (Nat.1 * Nat.7 + Nat.3).mod(Nat.7) = Nat.3.mod(Nat.7)
+    three_lt_seven
+    small_mod(Nat.3, Nat.7)
+    Nat.3.mod(Nat.7) = Nat.3
+}
+
+/// Fifteen has remainder one modulo seven.
+theorem fifteen_mod_seven {
+    Nat.15.mod(Nat.7) = Nat.1
+} by {
+    nat_mul_2_7
+    Nat.2 * Nat.7 = Nat.14
+    nat_add_14_1
+    Nat.14 + Nat.1 = Nat.15
+    Nat.2 * Nat.7 + Nat.1 = Nat.15
+    mod_add_mul(Nat.2, Nat.7, Nat.1)
+    (Nat.2 * Nat.7 + Nat.1).mod(Nat.7) = Nat.1.mod(Nat.7)
+    one_mod_seven
+}
+
+/// The square of five has remainder four modulo seven.
+theorem five_pow_two_mod_seven {
+    Nat.5.pow(Nat.2).mod(Nat.7) = Nat.4
+} by {
+    Nat.2 = Nat.1.suc
+    Nat.5.pow(Nat.2) = Nat.5.pow(Nat.1) * Nat.5
+    exp_one(Nat.5)
+    Nat.5.pow(Nat.1) = Nat.5
+    nat_mul_5_5
+    Nat.5 * Nat.5 = Nat.25
+    twenty_five_mod_seven
+}
+
+/// The cube of five has remainder six modulo seven.
+theorem five_pow_three_mod_seven {
+    Nat.5.pow(Nat.3).mod(Nat.7) = Nat.6
+} by {
+    Nat.3 = Nat.2.suc
+    Nat.5.pow(Nat.3) = Nat.5.pow(Nat.2) * Nat.5
+    mod_mul_left_eq(Nat.5.pow(Nat.2), Nat.5, Nat.7)
+    (Nat.5.pow(Nat.2) * Nat.5).mod(Nat.7) =
+        (Nat.5.pow(Nat.2).mod(Nat.7) * Nat.5).mod(Nat.7)
+    five_pow_two_mod_seven
+    nat_mul_4_5
+    Nat.4 * Nat.5 = Nat.20
+    twenty_mod_seven
+}
+
+/// The fourth power of five has remainder two modulo seven.
+theorem five_pow_four_mod_seven {
+    Nat.5.pow(Nat.4).mod(Nat.7) = Nat.2
+} by {
+    Nat.4 = Nat.3.suc
+    Nat.5.pow(Nat.4) = Nat.5.pow(Nat.3) * Nat.5
+    mod_mul_left_eq(Nat.5.pow(Nat.3), Nat.5, Nat.7)
+    (Nat.5.pow(Nat.3) * Nat.5).mod(Nat.7) =
+        (Nat.5.pow(Nat.3).mod(Nat.7) * Nat.5).mod(Nat.7)
+    five_pow_three_mod_seven
+    nat_mul_6_5
+    Nat.6 * Nat.5 = Nat.30
+    thirty_mod_seven
+}
+
+/// The fifth power of five has remainder three modulo seven.
+theorem five_pow_five_mod_seven {
+    Nat.5.pow(Nat.5).mod(Nat.7) = Nat.3
+} by {
+    Nat.5 = Nat.4.suc
+    Nat.5.pow(Nat.5) = Nat.5.pow(Nat.4) * Nat.5
+    mod_mul_left_eq(Nat.5.pow(Nat.4), Nat.5, Nat.7)
+    (Nat.5.pow(Nat.4) * Nat.5).mod(Nat.7) =
+        (Nat.5.pow(Nat.4).mod(Nat.7) * Nat.5).mod(Nat.7)
+    five_pow_four_mod_seven
+    nat_mul_2_5
+    Nat.2 * Nat.5 = Nat.10
+    ten_mod_seven
+}
+
+/// The sixth power of five has remainder one modulo seven.
+theorem five_pow_six_mod_seven {
+    Nat.5.pow(Nat.6).mod(Nat.7) = Nat.1
+} by {
+    Nat.6 = Nat.5.suc
+    Nat.5.pow(Nat.6) = Nat.5.pow(Nat.5) * Nat.5
+    mod_mul_left_eq(Nat.5.pow(Nat.5), Nat.5, Nat.7)
+    (Nat.5.pow(Nat.5) * Nat.5).mod(Nat.7) =
+        (Nat.5.pow(Nat.5).mod(Nat.7) * Nat.5).mod(Nat.7)
+    five_pow_five_mod_seven
+    nat_mul_3_5
+    Nat.3 * Nat.5 = Nat.15
+    fifteen_mod_seven
+}
+
+/// MiniF2F test problem `mathd_numbertheory_229`.
+theorem mathd_numbertheory_229 {
+    Nat.5.pow(Nat.30).mod(Nat.7) = Nat.1
+} by {
+    exp_mul(Nat.5, Nat.6, Nat.5)
+    Nat.5.pow(Nat.6 * Nat.5) = Nat.5.pow(Nat.6).pow(Nat.5)
+    nat_mul_6_5
+    Nat.6 * Nat.5 = Nat.30
+    Nat.5.pow(Nat.30) = Nat.5.pow(Nat.6).pow(Nat.5)
+    five_pow_six_mod_seven
+    Nat.5.pow(Nat.6).mod(Nat.7) = Nat.1
+    Nat.5.pow(Nat.6).congr_mod(Nat.1, Nat.7)
+    congr_mod_pow(Nat.5.pow(Nat.6), Nat.1, Nat.7, Nat.5)
+    Nat.5.pow(Nat.6).pow(Nat.5).congr_mod(Nat.1.pow(Nat.5), Nat.7)
+    one_exp(Nat.5)
+    Nat.1.pow(Nat.5) = Nat.1
+    Nat.5.pow(Nat.6).pow(Nat.5).mod(Nat.7) = Nat.1.mod(Nat.7)
+    one_mod_seven
+}
+
+/// The product of one, three, and five has remainder five modulo ten.
+theorem odd_product_to_five_mod_ten {
+    (Nat.1 * Nat.3 * Nat.5).mod(Nat.10) = Nat.5
+} by {
+    nat_mul_1_3
+    Nat.1 * Nat.3 = Nat.3
+    nat_mul_3_5
+    Nat.3 * Nat.5 = Nat.15
+    fifteen_mod_ten
+}
+
+/// Multiplying the first four odd factors still has remainder five modulo ten.
+theorem odd_product_to_seven_mod_ten {
+    (Nat.1 * Nat.3 * Nat.5 * Nat.7).mod(Nat.10) = Nat.5
+} by {
+    mod_mul_left_eq(Nat.1 * Nat.3 * Nat.5, Nat.7, Nat.10)
+    (Nat.1 * Nat.3 * Nat.5 * Nat.7).mod(Nat.10) =
+        ((Nat.1 * Nat.3 * Nat.5).mod(Nat.10) * Nat.7).mod(Nat.10)
+    odd_product_to_five_mod_ten
+    nat_mul_5_7
+    Nat.5 * Nat.7 = Nat.35
+    thirty_five_mod_ten
+}
+
+/// Multiplying the first five odd factors still has remainder five modulo ten.
+theorem odd_product_to_nine_mod_ten {
+    (Nat.1 * Nat.3 * Nat.5 * Nat.7 * Nat.9).mod(Nat.10) = Nat.5
+} by {
+    mod_mul_left_eq(Nat.1 * Nat.3 * Nat.5 * Nat.7, Nat.9, Nat.10)
+    (Nat.1 * Nat.3 * Nat.5 * Nat.7 * Nat.9).mod(Nat.10) =
+        ((Nat.1 * Nat.3 * Nat.5 * Nat.7).mod(Nat.10) * Nat.9).mod(Nat.10)
+    odd_product_to_seven_mod_ten
+    nat_mul_5_9
+    Nat.5 * Nat.9 = Nat.45
+    forty_five_mod_ten
+}
+
+/// Multiplying through eleven still has remainder five modulo ten.
+theorem odd_product_to_eleven_mod_ten {
+    (Nat.1 * Nat.3 * Nat.5 * Nat.7 * Nat.9 * Nat.11).mod(Nat.10) = Nat.5
+} by {
+    mod_mul_eq(Nat.1 * Nat.3 * Nat.5 * Nat.7 * Nat.9, Nat.11, Nat.10)
+    (Nat.1 * Nat.3 * Nat.5 * Nat.7 * Nat.9 * Nat.11).mod(Nat.10) =
+        ((Nat.1 * Nat.3 * Nat.5 * Nat.7 * Nat.9).mod(Nat.10) * Nat.11.mod(Nat.10)).mod(Nat.10)
+    odd_product_to_nine_mod_ten
+    eleven_mod_ten
+    nat_mul_5_1
+    Nat.5 * Nat.1 = Nat.5
+    five_lt_ten
+    small_mod(Nat.5, Nat.10)
+    Nat.5.mod(Nat.10) = Nat.5
+}
+
+/// The square of three is nine.
+theorem three_pow_two_eq_nine {
+    Nat.3.pow(Nat.2) = Nat.9
+} by {
+    Nat.2 = Nat.1.suc
+    Nat.3.pow(Nat.2) = Nat.3.pow(Nat.1) * Nat.3
+    exp_one(Nat.3)
+    Nat.3.pow(Nat.1) = Nat.3
+    nat_mul_3_9
+    Nat.3 * Nat.3 = Nat.9
+}
+
+/// The cube of three is twenty-seven.
+theorem three_pow_three_eq_twenty_seven {
+    Nat.3.pow(Nat.3) = Nat.27
+} by {
+    Nat.3 = Nat.2.suc
+    Nat.3.pow(Nat.3) = Nat.3.pow(Nat.2) * Nat.3
+    three_pow_two_eq_nine
+    nat_mul_9_3
+    Nat.9 * Nat.3 = Nat.27
+}
+
+/// Twenty-seven plus eighteen is forty-five.
+theorem twenty_seven_plus_eighteen {
+    Nat.27 + Nat.18 = Nat.45
+} by {
+    nat_add_9_9
+    Nat.9 + Nat.9 = Nat.18
+    Nat.27 + Nat.18 = Nat.27 + (Nat.9 + Nat.9)
+    Nat.27 + (Nat.9 + Nat.9) = Nat.27 + Nat.9 + Nat.9
+    nat_add_27_9
+    Nat.27 + Nat.9 = Nat.36
+    nat_add_36_9
+    Nat.36 + Nat.9 = Nat.45
+}
+
+/// Forty-five plus six plus two is fifty-three.
+theorem forty_five_plus_six_plus_two {
+    Nat.45 + Nat.6 + Nat.2 = Nat.53
+} by {
+    nat_add_6_2
+    Nat.6 + Nat.2 = Nat.8
+    Nat.45 + Nat.6 + Nat.2 = Nat.45 + (Nat.6 + Nat.2)
+    Nat.45 + Nat.6 + Nat.2 = Nat.45 + Nat.8
+    nat_add_45_8
+    Nat.45 + Nat.8 = Nat.53
+}
 
 /// MiniF2F test problem `mathd_numbertheory_342`.
 theorem mathd_numbertheory_342 {
@@ -10,4 +512,63 @@ theorem mathd_numbertheory_342 {
     Nat.9 * Nat.6 = Nat.54
     mod_mul(Nat.6, Nat.9)
     (Nat.9 * Nat.6).mod(Nat.6) = Nat.0
+}
+
+/// MiniF2F test problem `mathd_numbertheory_299`.
+theorem mathd_numbertheory_299 {
+    (Nat.1 * Nat.3 * Nat.5 * Nat.7 * Nat.9 * Nat.11 * Nat.13).mod(Nat.10) = Nat.5
+} by {
+    mod_mul_eq(Nat.1 * Nat.3 * Nat.5 * Nat.7 * Nat.9 * Nat.11, Nat.13, Nat.10)
+    (Nat.1 * Nat.3 * Nat.5 * Nat.7 * Nat.9 * Nat.11 * Nat.13).mod(Nat.10) =
+        ((Nat.1 * Nat.3 * Nat.5 * Nat.7 * Nat.9 * Nat.11).mod(Nat.10) * Nat.13.mod(Nat.10)).mod(Nat.10)
+    odd_product_to_eleven_mod_ten
+    thirteen_mod_ten
+    nat_mul_5_3
+    Nat.5 * Nat.3 = Nat.15
+    fifteen_mod_ten
+}
+
+/// MiniF2F test problem `mathd_numbertheory_343`.
+theorem mathd_numbertheory_343 {
+    (Nat.1 * Nat.3 * Nat.5 * Nat.7 * Nat.9 * Nat.11).mod(Nat.10) = Nat.5
+} by {
+    odd_product_to_eleven_mod_ten
+}
+
+/// MiniF2F test problem `mathd_numbertheory_85`.
+theorem mathd_numbertheory_85 {
+    Nat.1 * Nat.3.pow(Nat.3) + Nat.2 * Nat.3.pow(Nat.2) + Nat.2 * Nat.3 + Nat.2 = Nat.53
+} by {
+    three_pow_three_eq_twenty_seven
+    Nat.3.pow(Nat.3) = Nat.27
+    mul_one_left(Nat.27)
+    Nat.1 * Nat.27 = Nat.27
+    three_pow_two_eq_nine
+    Nat.3.pow(Nat.2) = Nat.9
+    nat_mul_2_9
+    Nat.2 * Nat.9 = Nat.18
+    nat_mul_2_3
+    Nat.2 * Nat.3 = Nat.6
+    twenty_seven_plus_eighteen
+    Nat.27 + Nat.18 = Nat.45
+    forty_five_plus_six_plus_two
+    Nat.45 + Nat.6 + Nat.2 = Nat.53
+}
+
+/// MiniF2F test problem `amc12a_2002_p6`.
+theorem amc12a_2002_p6(n: Nat) {
+    Nat.0 < n implies exists(m: Nat) {
+        n < m and exists(p: Nat) { m * p <= m + p }
+    }
+} by {
+    let m: Nat = n.suc
+    lt_suc(n)
+    n < m
+    mul_one_right(m)
+    m * Nat.1 = m
+    m <= m + Nat.1
+    exists(p: Nat) { m * p <= m + p }
+    exists(k: Nat) {
+        n < k and exists(p: Nat) { k * p <= k + p }
+    }
 }
